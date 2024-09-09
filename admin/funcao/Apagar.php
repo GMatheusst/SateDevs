@@ -10,14 +10,13 @@ $apagar = new ManipularDados();
 * Função para apagar cadastro de categoria
 */
 if($_POST["idForm"] == "apProd"){
-         $id = @$_GET["id"];
-         $apagar->acessarTabela("tbProduto");
-         $apagar->acessarCampo("idProduto");
-         $apagar->acessarDados("$id");
+         $id = @$_POST["id"];
+         $apagar->acessarTabela("tbproduto");
+         $apagar->acessarCampo("situacaoProduto='INATIVO'");
          $apagar->acessarCampoId("idProduto");
-         $apagar->acessarValorId(1);
-         $apagar->apagarDados();
-        echo "Chegou";
-        // @header('Location: ../tela/?tela=cadListarProduto');
+         $apagar->acessarValorId("$id");
+         $apagar->atualizarDados();
+       // echo "Chegou";
+       @header('Location: ../tela/?tela=cadListarProduto');
 }
 ?>

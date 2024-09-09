@@ -60,7 +60,7 @@ class VerificarLogin extends Minhaconexao
             $_SESSION['usuario'] = $this->usuario;
             $_SESSION['senha'] = $this->senha;
             $_SESSION['nome'] = $resultado["nomeUsuario"];
-            header('Location: /SateDevs/controleEstoque/admin/tela/index.php');
+            header('Location: tela/index.php');
         }
      } catch (Exception $e) {
         echo "Erro: ".$e->getMessage();

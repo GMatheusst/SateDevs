@@ -14,7 +14,7 @@
                 </div>
                 <form action="../funcao/Apagar.php" method="post">
                     <input type="hidden" name="idForm" value="apProd">
-                    <input type="hidden" name="id" value="<?php echo $dados['idProduto'];?>">
+                    <input type="hidden" name="id" value="<?php echo $dados['idProduto']; ?>">
                     <span class="modal-title fs-6" id="staticBackdropLabel">Está ação não será desfeita!</span>
                     <div class="modal-footer border-0">
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Não</button>

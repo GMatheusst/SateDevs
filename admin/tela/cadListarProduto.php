@@ -26,23 +26,31 @@
                                 <div class="modal-body">
                                     <div class="text-start border px-1 py-1 mb-1">
                                         <label for="nome" class="lead fs-6">Nome</label>
-                                        <input type="text" name="produto" id="" class="input border-0 border-bottom">
+                                        <input type="text" name="nome" id="" class="input border-0 border-bottom">
                                     </div>
                                     <div class="text-start border px-1 py-1 mb-1">
                                         <label for="nome" class="lead fs-6">Descrição</label>
-                                        <input type="text" name="produto" id="" class="input border-0 border-bottom">
+                                        <input type="text" name="desc" id="" class="input border-0 border-bottom">
                                     </div>
                                     <div class="text-start border px-1 py-1 mb-1">
                                         <label for="nome" class="lead fs-6">Quantidade</label>
-                                        <input type="text" name="produto" id="" class="input border-0 border-bottom">
+                                        <input type="text" name="quant" id="" class="input border-0 border-bottom">
                                     </div>
                                     <div class="text-start border px-1 py-1 mb-1">
                                         <label for="nome" class="lead fs-6">Valor Unitário</label>
-                                        <input type="text" name="produto" id="" class="input border-0 border-bottom">
+                                        <input type="text" name="preço" id="" class="input border-0 border-bottom">
                                     </div>
                                 </div>
                                 <div class="modal-footer border-0">
                                     <button type="submit" class="btn btn-sm btn-info">Adicionar</button>
+                                    <?php
+                                    include_once("../classe/CadastrarDados.php");
+                                    if(isset($_POST["nome"]) && isset($_POST["desc"]) && isset($_POST["quant"]) && isset($_POST["preço"])){
+                                        $inserir = new InserirDados();
+                                        $inserir->InserirProdutos(@$_POST["nome"],@$_POST["desc"],@$_POST["quant"],@$_POST["preço"]);
+                                        }
+                                   
+                                    ?>
                                 </div>
                             </form>
                         </div>

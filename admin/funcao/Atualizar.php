@@ -10,13 +10,13 @@ $apagar = new ManipularDados();
 * Função para apagar cadastro de categoria
 */
 if($_POST["idForm"] == "apCat"){
-         $id = $_GET["id"];
+         $id = $_POST["id"];
          $atualizar = new ManipularDados();
-         $atualizar->acessarTabela(@$_GET['tabela']);
-         $atualizar->acessarCampo(@$_GET['campo']);
-         $atualizar->acessarDados(@$_GET['dados']);
-         $atualizar->acessarCampoId(@$_GET['campoId']);
-         $atualizar->acessarValorId(@$_GET['valorId']);
+         $atualizar->acessarTabela(@$_POST['tabela']);
+         $atualizar->acessarCampo(@$_POST['campo']);
+         $atualizar->acessarDados(@$_POST['dados']);
+         $atualizar->acessarCampoId(@$_POST['campoId']);
+         $atualizar->acessarValorId(@$_POST['valorId']);
          $atualizar->atualizarDados();
         echo "Chegou";
         @header('Location: ../tela/?tela=cadListarCategoria');
