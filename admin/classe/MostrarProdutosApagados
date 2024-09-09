@@ -42,18 +42,16 @@ class MostrarProdutos extends CriaPaginacao
             if ($dados = self::results($query)) {
                 $contador++;
                 echo "
-                            <tr>
+                        <tr>
                             <td class='fw-lighter'>" . $dados['idProduto'] . "</td>
                             <td class='fw-lighter'>" . $dados['nomeProduto'] . "</td>
                             <td class='fw-lighter'>".$dados['descProduto']."</td>
                             <td class='fw-lighter'>".$dados['quantProduto']."</td>
                             <td class='fw-lighter'>R$".$dados['valorProduto']."</td>
                             <td class='align-content-around'>";
-                            include_once("../tela/formAtualizarProduto.php");
-                echo "</td>
-                            <td class='align-content-around'>";
-                    include_once("../tela/formApagarProduto.php");
-                            "</td>
+                                include_once("../tela/RecuperarProduto.php");
+                                echo "
+                            </td>
                         </tr>";
             self::setContador($contador);
         }
