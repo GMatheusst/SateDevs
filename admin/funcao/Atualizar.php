@@ -85,3 +85,4 @@ elseif($_POST["idForm"] == "apUser"){
        // echo "Chegou";
         @header('Location: ../tela/?tela=cadListarCategoria');
 }
+?>
