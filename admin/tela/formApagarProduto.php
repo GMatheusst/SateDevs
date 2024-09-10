@@ -1,12 +1,13 @@
 <div class="col-3 text-end">
     <!-- Button trigger modal -->
-    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#staticBackdropApC<?php echo $i;?>">
+    <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+        data-bs-target="#staticBackdropApC<?php echo $i; ?>">
         <i class="bi bi-trash2"></i>
     </button>
 
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdropApC<?php echo $i;?>" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdropApC<?php echo $i; ?>" data-bs-backdrop="static" data-bs-keyboard="false"
+        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header border-0">

@@ -9,80 +9,86 @@ $apagar = new ManipularDados();
 /***************************************
 * Função para apagar cadastro de categoria
 */
-if($_POST["idForm"] == "apProd"){
-         $id = $_POST["id"];
-         $nome = $_POST["produto"];
-         $img = $_POST["imagem"];
-         $desc = $_POST["desc"];
-         $quant = $_POST["quantidade"];
-         $preco = $_POST["valor"];
-         $bol = $_POST["situcao"];
-         $cat = $_POST["categoria"];
-         $subCat = $_POST["sub"];
+if(@$_POST["idForm"] == "atP"){
+         $id = @$_POST["id"];
+         $nome = @$_POST["produto"];
+         $img = @$_POST["imagem"];
+         $desc = @$_POST["desc"];
+         $quant = @$_POST["quantidade"];
+         $preco = @$_POST["valor"];
+  $bol = "ATIVO";//@$_POST["situcao"];
+  $cat = 1;//@$_POST["categoria"];
+  $subCat = 1; // @$_POST["sub"];
          $atualizar = new ManipularDados();
          $atualizar->acessarTabela("tbproduto");
-         $atualizar->acessarCampo("nomeProduto='$nome',"nomeProduto='$nome',"descProduto='$desc',"quantidadeProduto='$quant',"valorProduto='$preco',"situacaoProduto='$bol',"categoriaProduto='$cat',"subCategoriaProduto='$subCat', ");
+         $atualizar->acessarCampo("nomeProduto='$nome',descProduto='$desc',quantProduto='$quant',valorProduto='$preco',situacaoProduto='$bol',idCategoria='$cat',idSubCategoria='$subCat'");
+         $atualizar->acessarCampoId("idProduto");
+         $atualizar->acessarValorId($id);
+         $atualizar->atualizarDados();
+      // echo "Chegou";
+       @header('Location: ../tela/?tela=cadListarCategoria');
+}
+elseif(@$_POST["idForm"] == "apCat"){
+         $id = @$_POST["id"];
+         $nome = @$_POST["produto"];
+         $img = @$_POST["imagem"];
+         $desc = @$_POST["desc"];
+         $quant = @$_POST["quantidade"];
+         $preco = @$_POST["valor"];
+         $bol = @$_POST["situcao"];
+         $cat = @$_POST["categoria"];
+         $subCat = @$_POST["sub"];
+         $atualizar = new ManipularDados();
+         $atualizar->acessarTabela("tbproduto");
+         $atualizar->acessarCampo("nomeProduto='$nome',nomeProduto='$nome',descProduto='$desc',quantidadeProduto='$quant',valorProduto='$preco',situacaoProduto='$bol',categoriaProduto='$cat',subCategoriaProduto='$subCat', ");
          $atualizar->acessarCampoId("idProduto");
          $atualizar->acessarValorId($id);
          $atualizar->atualizarDados();
        // echo "Chegou";
         @header('Location: ../tela/?tela=cadListarCategoria');
 }
-elseif($_POST["idForm"] == "apCat"){
-         $id = $_POST["id"];
-         $nome = $_POST["produto"];
-         $img = $_POST["imagem"];
-         $desc = $_POST["desc"];
-         $quant = $_POST["quantidade"];
-         $preco = $_POST["valor"];
-         $bol = $_POST["situcao"];
-         $cat = $_POST["categoria"];
-         $subCat = $_POST["sub"];
+elseif(@$_POST["idForm"] == "apSubCat"){
+         $id = @$_POST["id"];
+         $nome = @$_POST["produto"];
+         $img = @$_POST["imagem"];
+         $desc = @$_POST["desc"];
+         $quant = @$_POST["quantidade"];
+         $preco = @$_POST["valor"];
+         $bol = @$_POST["situcao"];
+         $cat = @$_POST["categoria"];
+         $subCat = @$_POST["sub"];
          $atualizar = new ManipularDados();
          $atualizar->acessarTabela("tbproduto");
-         $atualizar->acessarCampo("nomeProduto='$nome',"nomeProduto='$nome',"descProduto='$desc',"quantidadeProduto='$quant',"valorProduto='$preco',"situacaoProduto='$bol',"categoriaProduto='$cat',"subCategoriaProduto='$subCat', ");
+         $atualizar->acessarCampo("nomeProduto='$nome',nomeProduto='$nome',descProduto='$desc',quantidadeProduto='$quant',valorProduto='$preco',situacaoProduto='$bol',categoriaProduto='$cat',subCategoriaProduto='$subCat', ");
          $atualizar->acessarCampoId("idProduto");
          $atualizar->acessarValorId($id);
          $atualizar->atualizarDados();
        // echo "Chegou";
         @header('Location: ../tela/?tela=cadListarCategoria');
 }
-elseif($_POST["idForm"] == "apSubCat"){
-         $id = $_POST["id"];
-         $nome = $_POST["produto"];
-         $img = $_POST["imagem"];
-         $desc = $_POST["desc"];
-         $quant = $_POST["quantidade"];
-         $preco = $_POST["valor"];
-         $bol = $_POST["situcao"];
-         $cat = $_POST["categoria"];
-         $subCat = $_POST["sub"];
+elseif(@$_POST["idForm"] == "apUser"){
+         $id = @$_POST["id"];
+         $nome = @$_POST["produto"];
+         $img = @$_POST["imagem"];
+         $desc = @$_POST["desc"];
+         $quant = @$_POST["quantidade"];
+         $preco = @$_POST["valor"];
+         $bol = @$_POST["situcao"];
+         $cat = @$_POST["categoria"];
+         $subCat = @$_POST["sub"];
          $atualizar = new ManipularDados();
          $atualizar->acessarTabela("tbproduto");
-         $atualizar->acessarCampo("nomeProduto='$nome',"nomeProduto='$nome',"descProduto='$desc',"quantidadeProduto='$quant',"valorProduto='$preco',"situacaoProduto='$bol',"categoriaProduto='$cat',"subCategoriaProduto='$subCat', ");
+         $atualizar->acessarCampo("nomeProduto='$nome',nomeProduto='$nome',descProduto='$desc',quantidadeProduto='$quant',valorProduto='$preco',situacaoProduto='$bol',categoriaProduto='$cat',subCategoriaProduto='$subCat', ");
          $atualizar->acessarCampoId("idProduto");
          $atualizar->acessarValorId($id);
          $atualizar->atualizarDados();
        // echo "Chegou";
         @header('Location: ../tela/?tela=cadListarCategoria');
-}
-elseif($_POST["idForm"] == "apUser"){
-         $id = $_POST["id"];
-         $nome = $_POST["produto"];
-         $img = $_POST["imagem"];
-         $desc = $_POST["desc"];
-         $quant = $_POST["quantidade"];
-         $preco = $_POST["valor"];
-         $bol = $_POST["situcao"];
-         $cat = $_POST["categoria"];
-         $subCat = $_POST["sub"];
-         $atualizar = new ManipularDados();
-         $atualizar->acessarTabela("tbproduto");
-         $atualizar->acessarCampo("nomeProduto='$nome',"nomeProduto='$nome',"descProduto='$desc',"quantidadeProduto='$quant',"valorProduto='$preco',"situacaoProduto='$bol',"categoriaProduto='$cat',"subCategoriaProduto='$subCat', ");
-         $atualizar->acessarCampoId("idProduto");
-         $atualizar->acessarValorId($id);
-         $atualizar->atualizarDados();
-       // echo "Chegou";
-        @header('Location: ../tela/?tela=cadListarCategoria');
-}
+
+      }
+      else{
+        var_dump($_POST["idForm"]);
+        echo "Erro ao atualizar o produto";
+      }
+
 ?>

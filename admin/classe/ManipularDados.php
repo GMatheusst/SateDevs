@@ -120,7 +120,7 @@ class ManipularDados extends MinhaConexao{
     */
     public function atualizarDados(){
         try {
-            $this->sql = "UPDATE $this->tabela SET $this->campo WHERE $this->campoId = '$this->valorId'";
+            $this->sql = "UPDATE $this->tabela SET $this->campo WHERE $this->campoId = '$this->valorId' ";
             if(self::execSql($this->sql)){
                 $this->status = "Dados atualizados com sucesso.";
             }
