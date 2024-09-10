@@ -1,13 +1,13 @@
 <?php
 
 include_once("../classe/ManipularDados.php");
+$insert = new ManipularDados();
 if($_POST["idForm"] == "CRProd"){
-$apagar = new ManipularDados();
-$this->acessarTabela("tbproduto");
-$this->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto");
-$this->acessarDados("'$nome','$desc','$quant','$preço'");
-$this->acessarCampoId("nomeProduto");
-$this->acessarValorId("'$nome'");
+$insert->acessarTabela("tbproduto");
+$insert->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto");
+$insert->acessarDados("'$nome','$desc','$quant','$preço'");
+$insert->acessarCampoId("nomeProduto");
+$insert->acessarValorId("'$nome'");
 self::inserirDados();
 }
 ?>
