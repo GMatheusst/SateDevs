@@ -1,7 +1,7 @@
 <?php
 
 include_once("../classe/ManipularDados.php");
-if($_POST["idForm"] == "CrProd"){
+if($_POST["idForm"] == "CRProd"){
 $apagar = new ManipularDados();
 $this->acessarTabela("tbproduto");
 $this->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto");
