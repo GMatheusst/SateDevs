@@ -97,7 +97,7 @@
     <div class="container">
         <div class="row">
             <div class="col d-flex flex-column align-items-center">
-                <ul class="nav nav1 d-flex">
+                <ul class="pagination">
                    <?php 
                    $produtos->geraNumeros();
                    ?>

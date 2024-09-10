@@ -134,7 +134,7 @@ class criaPaginacao extends MinhaConexao //Indicar o arquivo que será herdado
 	{
 
 		if ($this->ida > 1) {
-			echo "<li><a href=\"$this->fileName&pg=$this->pagAnt\" title=\"$this->pagAnt\">Anterior</a>\n<li>";
+			echo "<li class='page-item'><a class='page-link' href=\"$this->fileName&pg=$this->pagAnt\" title=\"$this->pagAnt\">Anterior</a>\n<li>";
 		}
 		if ($this->temp >= $this->maxLink) {
 			if ($this->numeroPaginas > $this->maxLink) {
@@ -149,15 +149,15 @@ class criaPaginacao extends MinhaConexao //Indicar o arquivo que será herdado
 			$this->lnk_impressos++;
 			// Mostra a página atual sem o link
 			if ($this->pagAtual == $this->lnk_impressos) {
-				echo "<li>$this->lnk_impressos \n</li>";
+				echo "<li class='page-item active'><a class='page-link' href=\"$this->fileName&pg=$this->lnk_impressos\" title=\"$this->lnk_impressos\">$this->lnk_impressos</a></li>\n";
 				//mostra os números das 
 			} else {
-				echo "<li><a href=\"$this->fileName&pg=$this->lnk_impressos\" title=\"$this->lnk_impressos\">$this->lnk_impressos</a></li>\n";
+				echo "<li class='page-item'><a class='page-link' href=\"$this->fileName&pg=$this->lnk_impressos\" title=\"$this->lnk_impressos\">$this->lnk_impressos</a></li>\n";
 			}
 		}
 		// mostra o link PRÓXIMO >>
 		if ($this->registroFinal < $this->resultadoTotal) {
-			echo "<li><a href=\"$this->fileName&pg=$this->proxPag\" title=\"$this->proxPag\">Pr&oacute;ximo</a></li>\n";
+			echo "<li class='page-item'><a class='page-link' href=\"$this->fileName&pg=$this->proxPag\" title=\"$this->proxPag\">Pr&oacute;ximo</a></li>\n";
 		}
 	}
 	public function getTime()

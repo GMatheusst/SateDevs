@@ -19,4 +19,34 @@ if($_POST["idForm"] == "apProd"){
        // echo "Chegou";
        @header('Location: ../tela/?tela=cadListarProduto');
 }
+elseif($_POST["idForm"] == "apCat"){
+         $id = @$_POST["id"];
+         $apagar->acessarTabela("tbcategoria");
+         $apagar->acessarCampo("situacaoCategoria='INATIVO'");
+         $apagar->acessarCampoId("idCategoria");
+         $apagar->acessarValorId("$id");
+         $apagar->atualizarDados();
+       // echo "Chegou";
+       @header('Location: ../tela/?tela=cadListarCategoria');
+}
+if($_POST["idForm"] == "apSubCat"){
+         $id = @$_POST["id"];
+         $apagar->acessarTabela("tbsubcategoria");
+         $apagar->acessarCampo("situacaoSubCategoria='INATIVO'");
+         $apagar->acessarCampoId("idSubCategoria");
+         $apagar->acessarValorId("$id");
+         $apagar->atualizarDados();
+       // echo "Chegou";
+       @header('Location: ../tela/?tela=cadListarSubCategoria');
+}
+if($_POST["idForm"] == "apUser"){
+         $id = @$_POST["id"];
+         $apagar->acessarTabela("tbusuario");
+         $apagar->acessarCampo("situacaoUsuario='INATIVO'");
+         $apagar->acessarCampoId("idUsuario");
+         $apagar->acessarValorId("$id");
+         $apagar->atualizarDados();
+       // echo "Chegou";
+       @header('Location: ../tela/?tela=cadListarProduto');
+}
 ?>
