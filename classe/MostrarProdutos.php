@@ -32,7 +32,43 @@ class MostrarProdutos extends CriaPaginacao{
         while($dados = self::results()){
             $contador++;
             echo "
-            ";
+<div class='col-4 mb-sm-0 mb-md-5 col-md-3 col-xl-3'>
+                <h5 class='lead text-dark fs-6 fw-medium'>$dados['nomeProduto']</h5>
+                <div class='text-center'>
+                    <img src='$dados['imagemProduto']' class='img-fluid img-thumbnail' alt=''>
+                </div>
+                <div class='text-center mt-2'>
+                    <!-- Button trigger modal -->
+                    <button type='button' class='btn btn-sm btn-danger' data-bs-toggle='modal'
+                        data-bs-target='#exampleModal'>
+                        Mais detalhes
+                    </button>
+
+                    <!-- Modal -->
+                    <div class='modal fade' id='exampleModal' tabindex='-1' aria-labelledby='exampleModalLabel'
+                        aria-hidden='true'>
+                        <div class='modal-dialog'>
+                            <div class='modal-content'>
+                                <div class='modal-header'>
+                                    <button type='button' class='btn-close' data-bs-dismiss='modal'
+                                        aria-label='Close'></button>
+                                </div>
+                                <div class='modal-body'>
+                                    <img src='$dados['imagemProduto']' alt='' class='img-fluid'>
+                                </div>
+                                <div class='modal-dialog'>
+                                    <div>Nome:$dados['nomeProduto']</div>
+                                    <div>Valor: $dados['valorProduto']</div>
+                                </div>
+                                <div class='modal-footer'>
+                                    <p>$dados['descProduto']</p>
+                                </div>
+                '          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+'         ";
             self::setContador($contador);
         }
     }
