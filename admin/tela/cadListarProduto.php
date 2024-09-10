@@ -22,7 +22,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <form action="#" method="post">
+                            <form action="../funcao/Inserir.php" method="post">
                                      <input type="hidden" name="idForm" value="CRProd">
                                 <div class="modal-body">
                                     <div class="text-start border px-1 py-1 mb-1">
@@ -44,14 +44,7 @@
                                 </div>
                                 <div class="modal-footer border-0">
                                     <button type="submit" class="btn btn-sm btn-info">Adicionar</button>
-                                    <?php
-                                    include_once("../classe/CadastrarDados.php");
-                                    if(isset($_POST["nome"]) && isset($_POST["desc"]) && isset($_POST["quant"]) && isset($_POST["preço"])){
-                                        $inserir = new InserirDados();
-                                        $inserir->InserirProdutos(@$_POST["nome"],@$_POST["desc"],@$_POST["quant"],@$_POST["preço"]);
-                                        }
-                                   
-                                    ?>
+                                    
                                 </div>
                             </form>
                         </div>

@@ -68,7 +68,7 @@ class ManipularDados extends MinhaConexao{
      * $this->acessarDados("'valor'");
      * self::inserirDados();
     */
-    protected function inserirDados(){
+    public function inserirDados(){
         if(self::getVerificarDuplicidade($this->valorId) != 0){
             echo "O cadastro já existe na base de dados.";
         }else{

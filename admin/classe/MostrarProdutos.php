@@ -30,8 +30,8 @@ class MostrarProdutos extends CriaPaginacao
         $query = self::execSql($sql);
         $this->setParametro($this->strNumPagina); //Número de página atual
         $this->setFileName($this->strUrl); //Envia o nome da página atual
-        $this->setInfoMaxPag(1); //Quantidade de itens por página
-        $this->setMaximoLinks(2); //Quantidade de links por página 1 à 6
+        $this->setInfoMaxPag(8); //Quantidade de itens por página
+        $this->setMaximoLinks(10); //Quantidade de links por página 1 à 6
         $this->setSQL($sql); //Envia a sql criada
         self::iniciaPaginacao(); //Executa o método que inicia a paginação
         $contador = 0; //Contador para gerar o número de páginas
@@ -49,10 +49,10 @@ class MostrarProdutos extends CriaPaginacao
                             <td class='fw-lighter'>".$dados['quantProduto']."</td>
                             <td class='fw-lighter'>R$".$dados['valorProduto']."</td>
                             <td class='align-content-around'>";
-                            include_once("../tela/formAtualizarProduto.php");
+                            include("../tela/formAtualizarProduto.php");
                 echo "</td>
                             <td class='align-content-around'>";
-                    include_once("../tela/formApagarProduto.php");
+                    include("../tela/formApagarProduto.php");
                             "</td>
                         </tr>";
             self::setContador($contador);
