@@ -23,6 +23,7 @@
                                     aria-label="Close"></button>
                             </div>
                             <form action="#" method="post">
+                                     <input type="hidden" name="idForm" value="CRProd">
                                 <div class="modal-body">
                                     <div class="text-start border px-1 py-1 mb-1">
                                         <label for="nome" class="lead fs-6">Nome</label>
