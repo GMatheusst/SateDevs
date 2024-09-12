@@ -26,7 +26,7 @@ class MostrarProdutos extends CriaPaginacao
     public function mostrarProdutos()
     {
 
-        $sql = "SELECT * FROM tbproduto WHERE situacaoProduto = 'ATIVO' ORDER BY idproduto";
+        $sql = "SELECT * FROM tbproduto, tbimagem WHERE situacaoProduto = 'ATIVO' ORDER BY idproduto";
         $query = self::execSql($sql);
         $this->setParametro($this->strNumPagina); //Número de página atual
         $this->setFileName($this->strUrl); //Envia o nome da página atual

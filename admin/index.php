@@ -28,7 +28,7 @@
                                 class="input border-0 border-bottom p-2"><br />
                             <div class="mt-4 d-flex justify-content-between align-items-center">
                                 <button type="submit" name="enviar" class="btn btn-danger" name="enviar">Enviar</button>
-                                <a href="#" class="text-secondary text-decoration-none">Esqueceu a senha</a>
+                               
                             </div>
                             <?php
                                 if(empty($_POST["usuario"]) || empty($_POST["senha"])){
@@ -43,13 +43,8 @@
                                   echo "</div>";
                                 }
                             ?>
-                            <hr class="m-5">
-                            <div class="d-flex icons justify-content-around">
-                                <button class="btn btn-primary rounded-circle"><i class="bi bi-facebook"></i></button>
-                                <button class="btn btn-danger rounded-circle"><i class="bi bi-meta"></i></button>
-                                <button class="btn btn-info rounded-circle"><i class="bi bi-whatsapp"></i></button>
-                                <button class="btn btn-primary rounded-circle"><i class="bi bi-messenger"></i></button>
-                            </div>
+                            
+                           
                         </form>
                     </div>
                 </div>

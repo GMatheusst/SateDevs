@@ -22,10 +22,6 @@
                         <input type="text" name="produto" id="" value="<?php echo $dados['nomeProduto']; ?>" class="input border-0 border-bottom">
                     </div>
                     <div class="text-start border px-1 py-1 mb-1">
-                        <label for="foto" class="lead fs-6">Foto do Produto</label>
-                        <input type="file" name="imagem" id="" value = "<?php echo $dados['fotoProduto']; ?>" class="form-control border-0 border-bottom">
-                    </div>
-                    <div class="text-start border px-1 py-1 mb-1">
                         <label for="desc" class="lead fs-6">Descrição do produto</label>
                         <input type="text" name="desc" id="" value="<?php echo $dados['descProduto']; ?>" class="input border-0 border-bottom">
                     </div>
@@ -36,14 +32,6 @@
                     <div class="text-start border px-1 py-1 mb-1">
                         <label for="valor" class="lead fs-6">Valor Unitário</label>
                         <input type="text" name="valor" id="" value="<?php echo $dados['valorProduto']; ?>" class="input border-0 border-bottom">
-                    </div>
-                    <div class="input text-start border px-1 py-1 mb-1">
-                        <label for="situacao" class="lead fs-6">Situação</label>
-                        <select class="form-select" aria-label="Default select example" name="situcao">
-                            <option selected>Ativo</option>
-                            <option value="nao">Não</option>
-                            <option value="sim">Sim</option>
-                        </select>
                     </div>
                     <div class="text-start border px-1 py-1 mb-1">
                         <label for="situacao" class="lead fs-6">Categoria</label>
@@ -62,6 +50,9 @@
                             <option value="nao">Não</option>
                             <option value="sim">Sim</option>
                         </select>
+                    </div>
+                    <div class="text-start border px-1 py-1 mb-1">
+                        <?php include_once("../funcao/ListarImagem.php");?>
                     </div>
                 </div>
                 <div class="modal-footer border-0">

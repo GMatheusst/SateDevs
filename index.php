@@ -14,6 +14,7 @@
 
 <body class="imgBack">
     <!-- Cabeçalho do projeto -->
+     
     <?php include_once("include/header.php"); ?>
     <!-- Conteúdo do projeto -->
     <main>
@@ -22,38 +23,17 @@
                 <div class="row">
                     <!-- Imagem compre -->
                     <div class="col-sm-12 col-md-3 p-0">
-                        <?php include_once("include/topo.php"); ?>
+                      
                         <!-- Formulário de pesquisa -->
                         <?php include_once("include/pesquisa.php");?>
                         <!-- Menu lateral -->
+                         <?php include_once("include/topo.php");?>
+                         
                         <?php include_once("include/menu.php");?>
+                        
                         <!-- News Letter -->
                         <?php include_once("include/newsLetter.php");?>
-                        <section class="mt-3">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col ms-1 ms-md-0 py-2 me-1 bg-info-subtle">
-                                        <div class="text-center mb-2 text-success">Área Administrativa</div>
-                                        <form action="" method="post" class="formcontrol">
-                                            <div class="input-group mb-1">
-                                                <label for="usuario" class="input-group-text"><i
-                                                        class="bi bi-person-square"></i></label>
-                                                <input type="text" placeholder="Usuário"
-                                                    class="input-group-text form-control">
-                                            </div>
-                                            <div class="input-group mb-1">
-                                                <label for="senha" class="input-group-text"><i
-                                                        class="bi bi-incognito"></i></label>
-                                                <input type="password" placeholder="Senha"
-                                                    class="input-group-text form-control">
-                                            </div>
-                                            <button type="submit"
-                                                class="btn btn-sm btn-success form-control">Enviar</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
+                       
                     </div>
                     <div class="mt-3 mt-md-0 col-sm-12 col-md-9 bg-white">
                         <?php 
