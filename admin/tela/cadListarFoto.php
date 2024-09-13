@@ -22,24 +22,18 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <form action="#" method="post">
+                            <form action="../funcao/Inserir.php" method="post">
+                                <input type="hidden" name="idForm" value="CRImg">
                                 <div class="modal-body">
                                     <div class="text-start">
                                         <label for="nome" class="lead fs-6">Nome</label>
-                                        <input type="text" name="produto" id="" class="input border-0 border-bottom">
+                                        <input type="text" name="nome" id="" class="input border-0 border-bottom">
                                     </div>
                                     <div class="text-start">
-                                        <label for="nome" class="lead fs-6">Descrição</label>
-                                        <input type="text" name="produto" id="" class="input border-0 border-bottom">
+                                        <label for="nome" class="lead fs-6">Imagem</label>
+                                        <input type="file" name="imagem" id="" class="input border-0 border-bottom">
                                     </div>
-                                    <div class="text-start">
-                                        <label for="nome" class="lead fs-6">Quantidade</label>
-                                        <input type="text" name="produto" id="" class="input border-0 border-bottom">
-                                    </div>
-                                    <div class="text-start">
-                                        <label for="nome" class="lead fs-6">Valor Unitário</label>
-                                        <input type="text" name="produto" id="" class="input border-0 border-bottom">
-                                    </div>
+                                    
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>
@@ -60,44 +54,22 @@
             <div class="col table-responsive">
                 <table class="table table-light table-hover">
                     <thead class="">
-                        <tr class="text-center table-dark">
+                        <tr class="text-center table-dark">                        
                             <th>Id</th>
-                            <th>Produto</th>
-                            <th class="">Descrição</th>
-                            <th class="">Quantidade</th>
-                            <th>Preço</th>
+                            <th>Nome</th>
                             <th width="30"></th>
                             <th width="30"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="fw-lighter">001</td>
-                            <td class="fw-lighter">Processador Core I7</td>
-                            <td class="fw-lighter">O Processador Intel Core i7-12700 da 12ª Geração
-                                feito com a arquitetura híbrida onde combina núcleos de desempenho e
-                                eficiência.</td>
-                            <td class="fw-lighter">23</td>
-                            <td class="fw-lighter">R$ 768,98</td>
-                            <td class="align-content-around"><a href="" class="link-info"><i
-                                        class="bi bi-pencil"></i></a></td>
-                            <td class="align-content-around"><a href="" class="link-danger"><i
-                                        class="bi bi-file-earmark-x"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="fw-lighter">001</td>
-                            <td class="fw-lighter">Processador Core I7</td>
-                            <td class="fw-lighter">O Processador Intel Core i7-12700 da 12ª Geração
-                                feito com a arquitetura híbrida onde combina núcleos de desempenho e
-                                eficiência.</td>
-                            <td class="fw-lighter">23</td>
-                            <td class="fw-lighter">R$ 768,98</td>
-                            <!-- Button update -->
-                            <td class="align-content-around"><a href="" class="link-info"><i
-                                        class="bi bi-pencil"></i></a></td>
-                            <td class="align-content-around"><a href="" class="link-danger"><i
-                                        class="bi bi-file-earmark-x"></i></a></td>
-                        </tr>
+                        <?php
+                        include_once("../classe/MostrarImagens.php");
+                        $imagem = new MostrarImagens();
+                        $imagem->setNumPagina(@$_GET["pg"]);
+                        $imagem->setUrl("?tela=cadListarFoto");
+                        $imagem->setSessao("");
+                        $imagem->mostrarImagem();
+                        ?>
                     </tbody>
                 </table>
             </div>
@@ -109,17 +81,10 @@
     <div class="container">
         <div class="row">
             <div class="col d-flex flex-column align-items-center">
-                <ul class="nav nav1 d-flex">
-                    <li class="px-1"><a href="" class="link-underline link-underline-opacity-0">Anterior</a></li>
-                    <li class="px-1"><a href="" class="link-underline link-underline-opacity-0">1</a>
-                    </li>
-                    <li class="px-1"><a href="" class="link-underline link-underline-opacity-0">2</a>
-                    </li>
-                    <li class="px-1"><a href="" class="link-underline link-underline-opacity-0">3</a>
-                    </li>
-                    <li class="px-1"><a href="" class="link-underline link-underline-opacity-0">4</a>
-                    </li>
-                    <li class="px-1"><a href="" class="link-underline link-underline-opacity-0">Próximo</a></li>
+                <ul class="pagination">
+                   <?php
+                    $imagem->geraNumeros();
+                    ?>
                 </ul>
             </div>
         </div>
