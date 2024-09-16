@@ -33,24 +33,9 @@
                         <label for="valor" class="lead fs-6">Valor Unitário</label>
                         <input type="text" name="valor" id="" value="<?php echo $dados['valorProduto']; ?>" class="input border-0 border-bottom">
                     </div>
-                    <div class="text-start border px-1 py-1 mb-1">
-                        <label for="situacao" class="lead fs-6">Categoria</label>
-                        <select class="form-select" aria-label="Default select example" name="categoria">
-                            <option selected>Categoria</option>
-                            <option value="Alimento">Alimento</option>
-                            <option value="Bebidas">Bebidas</option>
-                            <option value="Limpeza e Higiene">Limpeza e Higiene</option>
-                            <option value="Outros">Outros</option>
-                        </select>
-                    </div>
-                    <div class="text-start border px-1 py-1 mb-1">
-                        <label for="situacao" class="lead fs-6">Sub-Categoria</label>
-                        <select class="form-select" aria-label="Default select example" name="sub">
-                            <option selected>Sub-Categoria</option>
-                            <option value="nao">Não</option>
-                            <option value="sim">Sim</option>
-                        </select>
-                    </div>
+
+                        <?php include_once("../funcao/ListarCategorias.php"); ?>
+                       <?php include_once("../funcao/ListarSubCategorias.php"); ?>
                     <div class="text-start border px-1 py-1 mb-1">
                         <?php include_once("../funcao/ListarImagem.php");?>
                     </div>

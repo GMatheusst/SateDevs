@@ -10,13 +10,12 @@ $preço = @$_POST["preço"];
   $idc = @$_POST["categoria"];
   $idsc = @$_POST["sub"];
 $insert->acessarTabela("tbproduto");
-  $insert->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto,idCategoria,idSubCategoria");
-  $insert->acessarDados("'$nome','$desc','$quant','$preço','$idc','$idsc'");
-  $insert->acessarDados("'$nome','$desc','$quant','$preço','$idc','$idsc'");
-  $insert->acessarCampoId("nomeProduto");
-$insert->acessarValorId("'$nome'");
+$insert->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto");
+$insert->acessarDados("'$nome','$desc','$quant','$preço'");
+$insert->acessarCampoId("nomeProduto");
+$insert->acessarValorId('$nome');
 $insert->inserirDados();
-    @header('Location: ../tela/?tela=cadListarProduto');
+ @header('Location: ../tela/?tela=cadListarProduto');
 
 }
 if ($_POST["idForm"] == "CRImg") {

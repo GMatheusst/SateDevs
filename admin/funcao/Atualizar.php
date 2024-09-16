@@ -5,7 +5,7 @@
  * Data: 08 de agosto de 2024
  *******************************************************************/
 include_once("../classe/ManipularDados.php");
-$apagar = new ManipularDados();
+$atualizar = new ManipularDados();
 
 /***************************************
 * Função para apagar cadastro de categoria
@@ -17,17 +17,14 @@ if(@$_POST["idForm"] == "atP"){
          $desc = @$_POST["desc"];
          $quant = @$_POST["quantidade"];
          $preco = @$_POST["valor"];
-         $cat = 1;//@$_POST["categoria"];
-         $subCat = 1; // @$_POST["sub"];
-        if(isset($_FILES['imagem'])){
-  };
-         $atualizar = new ManipularDados();
+         $cat = @$_POST["Cat"];
+         $subCat =  @$_POST["SubCat"];
          $atualizar->acessarTabela("tbproduto");
-         $atualizar->acessarCampo("nomeProduto='$nome',descProduto='$desc',quantProduto='$quant',valorProduto='$preco',situacaoProduto='$bol',idCategoria='$cat',idSubCategoria='$subCat'");
+         $atualizar->acessarCampo("nomeProduto='$nome',descProduto='$desc',quantProduto='$quant',valorProduto='$preco',idCategoria='$cat',idSubCategoria='$subCat'");
          $atualizar->acessarCampoId("idProduto");
          $atualizar->acessarValorId($id);
          $atualizar->atualizarDados();
-       @header('Location: ../tela/?tela=cadListarProduto');
+      @header('Location: ../tela/?tela=cadListarProduto');
 }
 elseif(@$_POST["idForm"] == "apCat"){
          $id = @$_POST["id"];
