@@ -26,18 +26,19 @@ class MostrarProdutos extends CriaPaginacao
     public function mostrarProdutos()
     {
 
-        $sql = "SELECT * FROM tbproduto, tbimagem WHERE situacaoProduto = 'ATIVO' ORDER BY idproduto";
+        $sql = "SELECT * FROM tbproduto WHERE situacaoProduto = 'ATIVO' ORDER BY idproduto";
         $query = self::execSql($sql);
+        $totalItens = self::contarDados($query);
         $this->setParametro($this->strNumPagina); //Número de página atual
         $this->setFileName($this->strUrl); //Envia o nome da página atual
-        $this->setInfoMaxPag(8); //Quantidade de itens por página
-        $this->setMaximoLinks(10); //Quantidade de links por página 1 à 6
+        $this->setInfoMaxPag(1); //Quantidade de itens por página
+        $this->setMaximoLinks(6); //Quantidade de links por página 1 à 6
         $this->setSQL($sql); //Envia a sql criada
         self::iniciaPaginacao(); //Executa o método que inicia a paginação
         $contador = 0; //Contador para gerar o número de páginas
         $cont = 0;
-        for ($i = 0; $i <= mysqli_num_rows($query); $i++) {
-            $i = $i + 1;
+        for ($i = 0; $i <= $totalItens; $i++) {
+           $cont++;
 
             if ($dados = self::results($query)) {
                 $contador++;
@@ -50,9 +51,9 @@ class MostrarProdutos extends CriaPaginacao
                             <td class='fw-lighter'>R$".$dados['valorProduto']."</td>
                             <td class='align-content-around'>";
                             include("../tela/formAtualizarProduto.php");
-                echo "</td>
+                            echo "</td>
                             <td class='align-content-around'>";
-                    include("../tela/formApagarProduto.php");
+                        include("../tela/formApagarProduto.php");
                             "</td>
                         </tr>";
             self::setContador($contador);

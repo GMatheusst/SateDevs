@@ -41,10 +41,11 @@
                                         <label for="nome" class="lead fs-6">Valor Unitário</label>
                                         <input type="text" name="preço" id="" class="input border-0 border-bottom">
                                     </div>
-                                </div>
-                                <div class="modal-footer border-0">
-                                    <button type="submit" class="btn btn-sm btn-info">Adicionar</button>
                                     
+                                </div>
+                                
+                                <div class="modal-footer border-0">
+                                    <button type="submit" class="btn btn-sm btn-info">Adicionar</button> 
                                 </div>
                             </form>
                         </div>

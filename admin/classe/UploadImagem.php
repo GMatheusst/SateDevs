@@ -5,7 +5,7 @@ class UploadImagem{
         return $this->novoDiretorio;
     }
     public function upload($imagem){
-        echo $imagem;
+      
 // Verifica se o botão de envio do formulário foi clicado. Se o botão foi clicado, o código dentro deste if será executado.
         try {
                 // Obtém o nome, nome_temp e nome_final do arquivo

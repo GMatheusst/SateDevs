@@ -12,9 +12,9 @@ echo "
 
 ";
 
-while ($dados = self::Listardados($query)) {
+while ($imagem = self::Listardados($query)) {
     echo "
-      <option value='".$dados["idImagem"]."'>".$dados["nomeImagem"]."</option>
+      <option value='".$imagem["idImagem"]."'>".$imagem["nomeImagem"]."</option>
         ";
 }
 

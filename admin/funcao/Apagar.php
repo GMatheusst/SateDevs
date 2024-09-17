@@ -16,8 +16,12 @@ if($_POST["idForm"] == "apProd"){
          $apagar->acessarCampoId("idProduto");
          $apagar->acessarValorId("$id");
          $apagar->atualizarDados();
-       // echo "Chegou";
-       @header('Location: ../tela/?tela=cadListarProduto');
+  echo "
+    <script>
+    alert('Por favor, preencha todos os campos.');
+    window.location.href = '../tela/?tela=cadListarProduto';
+    </script>
+    ";
 }
 elseif($_POST["idForm"] == "apImg"){
          $id = @$_POST["id"];
@@ -26,8 +30,13 @@ elseif($_POST["idForm"] == "apImg"){
          $apagar->acessarCampoId("idImagem");
          $apagar->acessarValorId("$id");
          $apagar->atualizarDados();
-       // echo "Chegou";
-       @header('Location: ../tela/?tela=cadListarFoto');
+       
+  echo "
+    <script>
+    alert('Por favor, preencha todos os campos.');
+    window.location.href = '../tela/?tela=cadListarFoto';
+    </script>
+    ";
 }
 if($_POST["idForm"] == "apSubCat"){
          $id = @$_POST["id"];

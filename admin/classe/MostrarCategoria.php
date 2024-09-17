@@ -23,38 +23,35 @@ class MostrarCategorias extends CriaPaginacao
     {
         return $this->strNumPagina;
     }
-    public function mostrarProdutos()
+    public function mostrarCategorias()
     {
-        ;
-        $prod = $_GET["prod"];
-        $sql = "SELECT * FROM tbproduto WHERE idSessaoProduto = $prod ORDER BY sessaoProduto AND nomeProduto";
+        $sql = "SELECT * FROM tbcategoria WHERE situacaocategoria = 'ATIVO'";
         $query = self::execSql($sql);
+        $totalItens = self::contarDados($query);
         $this->setParametro($this->strNumPagina); //Número de página atual
         $this->setFileName($this->strUrl); //Envia o nome da página atual
-        $this->setInfoMaxPag(6); //Quantidade de itens por página
-        $this->setMaximoLinks(2); //Quantidade de links por página 1 à 6
+        $this->setInfoMaxPag(1); //Quantidade de itens por página
+        $this->setMaximoLinks(6); //Quantidade de links por página 1 à 6
         $this->setSQL($sql); //Envia a sql criada
         self::iniciaPaginacao(); //Executa o método que inicia a paginação
         $contador = 0; //Contador para gerar o número de páginas
         $cont = 0;
-        for ($i = 0; $i <= mysqli_num_rows($query); $i++) {
-            $i = $i + 1;
+        for ($i = 0; $i <= $totalItens; $i++) {
+           $cont++;
 
             if ($dados = self::results($query)) {
                 $contador++;
                 echo "
                             <tr>
-                                <td class='fw-lighter'>001</td>
+                                <td class='fw-lighter'>" . $dados['idCategoria'] . "</td>
                                 <td class='fw-lighter'>" . $dados['nomeCategoria'] . "</td>
-                                <td class='fw-lighter'>".$dados['descCateogoria']."</td>
-                                <td class='fw-lighter'>" . $dados['quantidade'] . "</td>
-                                <td class='fw-lighter'>" . $dados['valorUnitario'] . "</td>
+                                <td class='fw-lighter'>".$dados['descCategoria']."</td>
                                 <!-- Button update -->
                                 <td class='align-content-around'>
-                                    <?php include_once('../tela/formAtualizarCategoria.php'); ?>
+                                "; include('../tela/formAtualizarCategoria.php'); echo "
                                 </td>
                                 <td class='align-content-around'>
-                                    <?php include_once('../tela/formApagarCategoria.php'); ?>
+                                    "; include('../tela/formApagarCategoria.php'); echo "
                                 </td>
                             </tr>
             ";

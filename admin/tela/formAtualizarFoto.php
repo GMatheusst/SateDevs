@@ -10,7 +10,9 @@
         <div class="modal-content">
             <div class="modal-header border-0">
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Atualizar Categoria Selecionada</h1>
+                
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                 <img src="<?php echo $dados['pastaImagem']; ?>" alt="Imagem" class="img-fluid" height="300" width="200">
             </div>
             <form action="../funcao/Atualizar.php" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
@@ -23,7 +25,7 @@
                     </div>
                     <div class="text-start border px-1 py-1 mb-1">
                         <label for="desc" class="lead fs-6">Local Da Imagem</label>
-                        <input type="file" name="imagem" id="" value="<?php echo $dados['pastaImagem']; ?>"
+                        <input type="file" name="imagem" id="" 
                             class="input border-0 border-bottom">
                     </div>
                 </div>
