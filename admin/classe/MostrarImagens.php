@@ -26,7 +26,7 @@ class MostrarImagens extends CriaPaginacao
     public function mostrarImagem()
     {
 
-        $sql = "SELECT * FROM tbimagem ORDER BY nomeImagem ASC";
+        $sql = "SELECT * FROM tbimagem WHERE situacaoImagem = 'ATIVO' ORDER BY nomeImagem ASC";
         $query = self::execSql($sql);
         $this->setParametro($this->strNumPagina); //Número de página atual
         $this->setFileName($this->strUrl); //Envia o nome da página atual
@@ -49,7 +49,7 @@ class MostrarImagens extends CriaPaginacao
                             include("../tela/formAtualizarFoto.php");
                             echo "</td>
                             <td class='align-content-around'>";
-                            include("../tela/formApagarProduto.php");
+                            include("../tela/formApagarFoto.php");
                             "</td>
                         </tr>";
                 self::setContador($contador);

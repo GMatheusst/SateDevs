@@ -19,15 +19,15 @@ if($_POST["idForm"] == "apProd"){
        // echo "Chegou";
        @header('Location: ../tela/?tela=cadListarProduto');
 }
-elseif($_POST["idForm"] == "apCat"){
+elseif($_POST["idForm"] == "apImg"){
          $id = @$_POST["id"];
-         $apagar->acessarTabela("tbcategoria");
-         $apagar->acessarCampo("situacaoCategoria='INATIVO'");
-         $apagar->acessarCampoId("idCategoria");
+         $apagar->acessarTabela("tbimagem");
+         $apagar->acessarCampo("situacaoImagem='INATIVO'");
+         $apagar->acessarCampoId("idImagem");
          $apagar->acessarValorId("$id");
          $apagar->atualizarDados();
        // echo "Chegou";
-       @header('Location: ../tela/?tela=cadListarCategoria');
+       @header('Location: ../tela/?tela=cadListarFoto');
 }
 if($_POST["idForm"] == "apSubCat"){
          $id = @$_POST["id"];

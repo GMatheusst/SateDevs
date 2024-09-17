@@ -12,53 +12,25 @@
                 <h1 class="modal-title fs-5" id="staticBackdropLabel">Atualizar Categoria Selecionada</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="../funcao/Atualizar.php" method="post">
+            <form action="../funcao/Atualizar.php" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
                     <div class="text-start border px-1 py-1 mb-1">
-                        <input type="hidden" name="idForm" value="atP">
-                        <input type="hidden" name="id" value="<?php echo $dados['idProduto']; ?>">
-                        <label for="nome" class="lead fs-6">Nome do produto</label>
-                        <input type="text" name="produto" id="" value="<?php echo $dados['nomeProduto']; ?>"
+                        <input type="hidden" name="idForm" value="atImg">
+                        <input type="hidden" name="id" value="<?php echo $dados['idImagem']; ?>">
+                        <label for="nome" class="lead fs-6">Nome da Imagem</label>
+                        <input type="text" name="name" id="" value="<?php echo $dados['nomeImagem']; ?>"
                             class="input border-0 border-bottom">
                     </div>
                     <div class="text-start border px-1 py-1 mb-1">
-                        <label for="desc" class="lead fs-6">Descrição do produto</label>
-                        <input type="text" name="desc" id="" value="<?php echo $dados['descProduto']; ?>"
+                        <label for="desc" class="lead fs-6">Local Da Imagem</label>
+                        <input type="file" name="imagem" id="" value="<?php echo $dados['pastaImagem']; ?>"
                             class="input border-0 border-bottom">
-                    </div>
-                    <div class="text-start border px-1 py-1 mb-1">
-                        <label for="quantidade" class="lead fs-6">Quantidade</label>
-                        <input type="text" name="quantidade" id="" value="<?php echo $dados['quantProduto']; ?>"
-                            class="input border-0 border-bottom">
-                    </div>
-                    <div class="text-start border px-1 py-1 mb-1">
-                        <label for="valor" class="lead fs-6">Valor Unitário</label>
-                        <input type="text" name="valor" id="" value="<?php echo $dados['valorProduto']; ?>"
-                            class="input border-0 border-bottom">
-                    </div>
-                    <div class="text-start border px-1 py-1 mb-1">
-                        <label for="situacao" class="lead fs-6">Categoria</label>
-                        <select class="form-select" aria-label="Default select example" name="categoria">
-                            <option selected>Categoria</option>
-                            <option value="Alimento">Alimento</option>
-                            <option value="Bebidas">Bebidas</option>
-                            <option value="Limpeza e Higiene">Limpeza e Higiene</option>
-                            <option value="Outros">Outros</option>
-                        </select>
-                    </div>
-                    <div class="text-start border px-1 py-1 mb-1">
-                        <label for="situacao" class="lead fs-6">Sub-Categoria</label>
-                        <select class="form-select" aria-label="Default select example" name="sub">
-                            <option selected>Sub-Categoria</option>
-                            <option value="nao">Não</option>
-                            <option value="sim">Sim</option>
-                        </select>
-                    </div>
-                    <div class="text-start border px-1 py-1 mb-1">
-                        <?php include_once("../funcao/ListarImagem.php"); ?>
                     </div>
                 </div>
                 <div class="modal-footer border-0">
+                    <?php
+                    $imagemAtual = $dados['pastaImagem'];
+                    ?>
                     <button type="submit" class="btn btn-sm btn-info">Adicionar</button>
                 </div>
             </form>

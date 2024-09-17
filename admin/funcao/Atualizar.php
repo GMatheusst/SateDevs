@@ -26,6 +26,24 @@ if(@$_POST["idForm"] == "atP"){
          $atualizar->atualizarDados();
       @header('Location: ../tela/?tela=cadListarProduto');
 }
+elseif(@$_POST["idForm"] == "atImg")
+{
+        include_once("../classe/UploadImagem.php");
+        $id = @$_POST["id"];  
+        $name = @$_POST["name"];
+        $Imagem = @$_FILES['imagem'];
+        $image = new UploadImagem();
+        $image->upload($Imagem);
+        $idImagem = $image->getNovoDiretorio();
+        $atualizar->acessarTabela("tbimagem");
+        $atualizar->acessarCampo("nomeImagem='$name',pastaImagem='$idImagem'");
+        $atualizar->acessarCampoId("idImagem");
+        $atualizar->acessarValorId($id);
+        $atualizar->atualizarDados();
+     @header('Location: ../tela/?tela=cadListarFoto');
+
+
+}
 elseif(@$_POST["idForm"] == "apCat"){
          $id = @$_POST["id"];
          $nome = @$_POST["produto"];
