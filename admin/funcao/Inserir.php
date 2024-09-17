@@ -19,18 +19,22 @@ $insert->inserirDados();
 
 }
 if ($_POST["idForm"] == "CRImg") {
-  $nome = @$_POST["produto"];
-  $idImagem = @$_POST["imagem"];
- 
-  var_dump($idImagem);
-  $insert = new ManipularDados();
-  $insert->acessarTabela("tbimagem");
+  include_once("../classe/UploadImagem.php");
+  $nome = @$_POST["nome"];
+  var_dump($_FILES['imagem']);
+  $Imagem = @$_FILES['imagem'];
+  $image = new UploadImagem();
+  $image->upload($Imagem);
+  $idImagem = $image->getNovoDiretorio();
+  
+  
+  $insert->acessarTabela("tbimagem");   
   $insert->acessarCampo("nomeImagem,pastaImagem");
   $insert->acessarDados("'$nome','$idImagem'");
   $insert->acessarCampoId("nomeImagem");
   $insert->acessarValorId("'$nome'");
   $insert->inserirDados();
-  //  @header('Location: ../tela/?tela=cadListarFoto&pg=1');
+  //@header('Location: ../tela/?tela=cadListarFoto');
 
  }
 ?>

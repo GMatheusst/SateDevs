@@ -39,6 +39,7 @@ CREATE TABLE IF NOT EXISTS `tbevento` (
   `dataFimEvento` date NOT NULL,
   `horaInicioEvento` time NOT NULL,
   `horaFimEvento` time NOT NULL DEFAULT '00:00:00',
+  `situacaoImagem` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
   PRIMARY KEY (`idEvento`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -49,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `tbimagem` (
   `idImagem` int NOT NULL AUTO_INCREMENT,
   `nomeImagem` char(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `pastaImagem` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `situacaoImagem` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
   PRIMARY KEY (`idImagem`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
@@ -73,6 +75,7 @@ CREATE TABLE IF NOT EXISTS `tbontato` (
   `estadoContato` char(2) DEFAULT NULL,
   `assuntoContato` char(50) DEFAULT NULL,
   `mensagemContato` varchar(500) DEFAULT NULL,
+  `situacaoContato` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
   PRIMARY KEY (`idContato`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Tabela para salvar mensagens dos usuários.';
 
