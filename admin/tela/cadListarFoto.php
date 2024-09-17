@@ -22,7 +22,7 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <form action="../funcao/Inserir.php" method="post">
+                            <form action="../funcao/Inserir.php" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="idForm" value="CRImg">
                                 <div class="modal-body">
                                     <div class="text-start">
