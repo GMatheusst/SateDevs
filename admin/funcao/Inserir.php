@@ -195,5 +195,19 @@ elseif ($_POST["idForm"] == "CRNewsLetter") {
     ";
   }
 }
+elseif($_POST["idForm"] == "CadFoto"){
+  include_once("../classe/UploadImagem.php");
+      $id = @$_POST["id"];
+      $Imagem = @$_FILES['imagem'];
+      $image = new UploadImagem();
+      $image->upload($Imagem);
+      $idImagem = $image->getNovoDiretorio();
+      $insert->acessarTabela("tbusuario");
+      $insert->acessarCampo("fotoUsuario='$idImagem'");
+      $insert->acessarCampoId("idUsuario");
+      $insert->acessarValorId($id);
+      $insert->atualizarDados();
+     
+}
 
 ?>

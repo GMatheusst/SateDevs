@@ -115,9 +115,8 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
   `idUsuario` int NOT NULL AUTO_INCREMENT,
   `nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `senhaUsuario` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `emailUsuario` char(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `fotoUsuario` char(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `pastaFotoUsuario` char(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `profissaoUsuario` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `fotoUsuario` char(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL, 
   `situacaoUsuario` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
   PRIMARY KEY (`idUsuario`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
