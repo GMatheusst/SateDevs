@@ -1,35 +1,52 @@
-<header>
-    <section class="mt-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-3 text-center align-content-around"><img src="img/logo.png"
-                        alt="logo"></div>
-                <div class="d-none d-sm-inline-block col-9 text-end p-0">
-                    <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="carousel-item active">
-                                <img src="img/banner01.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/banner02.png" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="carousel-item">
-                                <img src="img/banner03.png" class="d-block w-100" alt="...">
-                            </div>
-                        </div>
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                        </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
-                            data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</header>
+<nav class="ms-1 ms-md-0">
+    <ul class="nav nav-tabs justify-content-center">
+        <li class="bg-info-subtle "><a href="." class="d-block"><img src="img/1.png" alt="icon_home">
+                Home</a></li>
+        <li class="bg-info-subtle "><a href="#" class="d-block"><img src="img/2.png" alt="icon_produtos">
+                Produtos</a>
+            <ul class="submenu">
+                <li class="bg-info-subtle "><a href="#">Alimentos</a>
+                    <ul class="submenu">
+                        <li><a href="?sessao=produtos&idc=1&idsc=1">Perecível</a></li>
+                        <li><a href="?sessao=produtos">Não perecível</a></li>
+                    </ul>
+                </li>
+                <li class="bg-info-subtle "><a href="#" class="d-block ">Bebida</a>
+                    <ul class="submenu">
+                        <li><a href="?sessao=produtos">Alcoólica</a></li>
+                        <li><a href="?sessao=produtos">Não alcoólica</a></li>
+                    </ul>
+                </li>
+                <li class="bg-info-subtle "><a href="#" class="d-block ">Limpeza</a>
+                    <ul class="submenu">
+                        <li><a href="?sessao=produtos">Doméstica</a></li>
+                        <li><a href="?sessao=produtos">Higiene pessoal</a></li>
+                    </ul>
+                </li>
+                <li class="bg-info-subtle "><a href="?sessao=" class="d-block ">Massas</a>
+                </li>
+                <li class="bg-info-subtle "><a href="#" class="d-block ">Outros</a>
+                    <ul class="submenu">
+                        <li><a href="?sessao=produtos">Pet shop</a></li>
+                        <li><a href="?sessao=produtos">Prdoutos de higiene</a></li>
+                        <li><a href="?sessao=produtos">Utilidades doméstica</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li class="bg-info-subtle "><a href="?sessao=galeria" class="d-block "><img src="img/3.png"
+                    alt="icon_ofertas">
+                Galeria</a></li>
+        <li class="bg-info-subtle "><a href="?sessao=eventos" class="d-block "><img src="img/4.png"
+                    alt="icon_eventos">
+                Eventos</a></li>
+        <li class="bg-info-subtle "><a href="?sessao=localizacao" class="d-block "><img src="img/5.png"
+                    alt="icon_localizacao">
+                Localização</a></li>
+        <li class="bg-info-subtle "><a href="?sessao=contato" class="d-block "><img src="img/6.png"
+                    alt="icon_contato">
+                Contato</a></li>
+                <li class="bg-info-subtle "> <?php include_once("include/pesquisa.php");?></li>
+    </ul>
+    
+</nav>

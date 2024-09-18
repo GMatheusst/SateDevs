@@ -25,12 +25,10 @@
                     <div class="col-sm-12 col-md-3 p-0">
                       
                         <!-- Formulário de pesquisa -->
-                        <?php include_once("include/pesquisa.php");?>
+                        
                         <!-- Menu lateral -->
                          <?php include_once("include/topo.php");?>
                          
-                        <?php include_once("include/menu.php");?>
-                        
                         <!-- News Letter -->
                         <?php include_once("include/newsLetter.php");?>
                        
