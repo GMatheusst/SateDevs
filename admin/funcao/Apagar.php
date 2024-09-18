@@ -18,7 +18,7 @@ if($_POST["idForm"] == "apProd"){
          $apagar->atualizarDados();
   echo "
     <script>
-    alert('Por favor, preencha todos os campos.');
+    alert('Produto apagado com sucesso.');
     window.location.href = '../tela/?tela=cadListarProduto';
     </script>
     ";
@@ -30,25 +30,44 @@ elseif($_POST["idForm"] == "apImg"){
          $apagar->acessarCampoId("idImagem");
          $apagar->acessarValorId("$id");
          $apagar->atualizarDados();
-       
-  echo "
+         echo "
+          <script>
+          alert('Por favor, preencha todos os campos.');
+          window.location.href = '../tela/?tela=cadListarFoto';
+          </script>
+          ";
+}
+elseif($_POST["idForm"] == "apCat"){
+    $id = @$_POST["id"];
+    $apagar->acessarTabela("tbcategoria");
+    $apagar->acessarCampo("situacaoCategoria='INATIVO'");
+    $apagar->acessarCampoId("idCategoria");
+    $apagar->acessarValorId("$id");
+    $apagar->atualizarDados();
+    echo "
     <script>
-    alert('Por favor, preencha todos os campos.');
-    window.location.href = '../tela/?tela=cadListarFoto';
+    alert('Categoria apagada com sucesso.');
+    window.location.href = '../tela/?tela=cadListarCategoria';
     </script>
     ";
 }
-if($_POST["idForm"] == "apSubCat"){
+elseif($_POST["idForm"] == "apSubCat"){
          $id = @$_POST["id"];
          $apagar->acessarTabela("tbsubcategoria");
          $apagar->acessarCampo("situacaoSubCategoria='INATIVO'");
          $apagar->acessarCampoId("idSubCategoria");
          $apagar->acessarValorId("$id");
          $apagar->atualizarDados();
-       // echo "Chegou";
-       @header('Location: ../tela/?tela=cadListarSubCategoria');
+       ;
+       echo "
+       <script>
+       alert('Sub Categoria apagado com sucesso.');
+       window.location.href = '../tela/?tela=cadListarSubCategoria';
+       </script>
+       ";
 }
-if($_POST["idForm"] == "apUser"){
+
+elseif($_POST["idForm"] == "apUser"){
          $id = @$_POST["id"];
          $apagar->acessarTabela("tbusuario");
          $apagar->acessarCampo("situacaoUsuario='INATIVO'");

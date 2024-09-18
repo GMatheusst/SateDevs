@@ -30,7 +30,7 @@
                                         <input type="text" name="nome" id="" class="input border-0 border-bottom">
                                     </div>
                                     <div class="text-start border px-1 py-1 mb-1">
-                                        <label for="desc" class="lead fs-6">Descrição do produto</label>
+                                        <label for="desc" class="lead fs-6">Descrição da categoria</label>
                                         <input type="text" name="desc" id="" class="input border-0 border-bottom">
                                     </div>
                                 </div>

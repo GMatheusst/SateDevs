@@ -71,33 +71,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="fw-lighter">001</td>
-                            <td class="fw-lighter">Processador Core I7</td>
-                            <td class="fw-lighter">O Processador Intel Core i7-12700 da 12ª Geração
-                                feito com a arquitetura híbrida onde combina núcleos de desempenho e
-                                eficiência.</td>
-                            <td class="fw-lighter">23</td>
-                            <td class="fw-lighter">R$ 768,98</td>
-                            <td class="align-content-around"><a href="" class="link-info"><i
-                                        class="bi bi-pencil"></i></a></td>
-                            <td class="align-content-around"><a href="" class="link-danger"><i
-                                        class="bi bi-file-earmark-x"></i></a></td>
-                        </tr>
-                        <tr>
-                            <td class="fw-lighter">001</td>
-                            <td class="fw-lighter">Processador Core I7</td>
-                            <td class="fw-lighter">O Processador Intel Core i7-12700 da 12ª Geração
-                                feito com a arquitetura híbrida onde combina núcleos de desempenho e
-                                eficiência.</td>
-                            <td class="fw-lighter">23</td>
-                            <td class="fw-lighter">R$ 768,98</td>
-                            <!-- Button update -->
-                            <td class="align-content-around"><a href="" class="link-info"><i
-                                        class="bi bi-pencil"></i></a></td>
-                            <td class="align-content-around"><a href="" class="link-danger"><i
-                                        class="bi bi-file-earmark-x"></i></a></td>
-                        </tr>
+                       
                     </tbody>
                 </table>
             </div>

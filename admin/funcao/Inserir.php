@@ -92,7 +92,7 @@ elseif($_POST["idForm"] == "CRCat"){
   }
   }
 elseif($_POST["idForm"] == "CRSub") {
-  if (empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["situacao"])) {
+  if (empty($_POST["nome"]) || empty($_POST["desc"])) {
     echo "
     <script>
     alert('Por favor, preencha todos os campos.');
@@ -102,10 +102,9 @@ elseif($_POST["idForm"] == "CRSub") {
   } else {
     $nome = @$_POST["nome"];
     $desc = @$_POST["desc"];
-    $situacao = @$_POST["situacao"];
     $insert->acessarTabela("tbsubcategoria");
-    $insert->acessarCampo("nomeSubCategoria,descSubCategoria,situacaoSubCategoria");
-    $insert->acessarDados("'$nome','$desc','$situacao'");
+    $insert->acessarCampo("nomeSubCategoria,descSubCategoria");
+    $insert->acessarDados("'$nome','$desc'");
     $insert->acessarCampoId("nomeSubCategoria");
     $insert->acessarValorId('$nome');
     $insert->inserirDados();

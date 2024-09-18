@@ -89,11 +89,11 @@ elseif(@$_POST["idForm"] == "atImg")
     }
   }
 } 
-elseif (@$_POST["idForm"] == "apCat") {
-if(empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["situacao"])){
+elseif (@$_POST["idForm"] == "atCat") {
+if(empty($_POST["nome"]) || empty($_POST["desc"]) ){
     echo "
     <script>
-    alert('Por favor, preencha todos os campos.');
+    alert('Por favor, preencha todos os campos.*');
     window.location.href = '../tela/?tela=cadListarCategoria';
     </script>
     ";
@@ -104,20 +104,20 @@ if(empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["situacao"])){
     $situacao = @$_POST["situacao"];
     $id = @$_POST["id"];
     $atualizar->acessarTabela("tbcategoria");
-    $atualizar->acessarCampo("nomeCategoria='$nome',descCategoria='$desc',situacaoCategoria='$situacao'");
+    $atualizar->acessarCampo("nomeCategoria='$nome',descCategoria='$desc'");
     $atualizar->acessarCampoId("idCategoria");
     $atualizar->acessarValorId($id);
     $atualizar->atualizarDados();
     echo "
     <script>
-    alert('Por favor, preencha todos os campos.');
+    alert('Atualizado com sucesso.');
     window.location.href = '../tela/?tela=cadListarCategoria';
     </script>
-    ";
+    "; 
   }
 } 
-elseif (@$_POST["idForm"] == "apSubCat") {
-if(empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["situacao"])){
+elseif (@$_POST["idForm"] == "atSubCat") {
+if(empty($_POST["nome"]) || empty($_POST["desc"]) ){
     echo "
     <script>
     alert('Por favor, preencha todos os campos.');
@@ -131,16 +131,17 @@ if(empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["situacao"])){
     $situacao = @$_POST["situacao"];
     $id = @$_POST["id"];
     $atualizar->acessarTabela("tbsubcategoria");
-    $atualizar->acessarCampo("nomeSubCategoria='$nome',descSubCategoria='$desc',situacaoSubCategoria='$situacao'");
+    $atualizar->acessarCampo("nomeSubCategoria='$nome',descSubCategoria='$desc'");
     $atualizar->acessarCampoId("idSubCategoria");
     $atualizar->acessarValorId($id);
     $atualizar->atualizarDados();
     echo "
     <script>
-    alert('Por favor, preencha todos os campos.');
+    alert('Atualizado com sucesso.');
     window.location.href = '../tela/?tela=cadListarSubCategoria';
     </script>
     ";
+    
   }
 } 
 elseif (@$_POST["idForm"] == "apUsr") {
@@ -223,5 +224,8 @@ if(empty($_POST["email"]) || empty($_POST["situacao"])){
                     </script> 
                     ";
   }
+}
+else{
+  echo"ERRO FORA DOS FORMULARIOS";
 }
 ?>
