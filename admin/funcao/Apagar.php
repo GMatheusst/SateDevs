@@ -18,7 +18,7 @@ if($_POST["idForm"] == "apProd"){
          $apagar->atualizarDados();
   echo "
     <script>
-    alert('Produto apagado com sucesso.');
+    alert('Apagado com sucesso.');
     window.location.href = '../tela/?tela=cadListarProduto';
     </script>
     ";
@@ -32,7 +32,7 @@ elseif($_POST["idForm"] == "apImg"){
          $apagar->atualizarDados();
          echo "
           <script>
-          alert('Por favor, preencha todos os campos.');
+          alert('Apagado com sucesso.');
           window.location.href = '../tela/?tela=cadListarFoto';
           </script>
           ";
@@ -45,11 +45,11 @@ elseif($_POST["idForm"] == "apCat"){
     $apagar->acessarValorId("$id");
     $apagar->atualizarDados();
     echo "
-    <script>
-    alert('Categoria apagada com sucesso.');
-    window.location.href = '../tela/?tela=cadListarCategoria';
-    </script>
-    ";
+          <script>
+          alert('Apagado com sucesso.');
+          window.location.href = '../tela/?tela=cadListarFoto';
+          </script>
+          ";
 }
 elseif($_POST["idForm"] == "apSubCat"){
          $id = @$_POST["id"];
@@ -61,8 +61,8 @@ elseif($_POST["idForm"] == "apSubCat"){
        ;
        echo "
        <script>
-       alert('Sub Categoria apagado com sucesso.');
-       window.location.href = '../tela/?tela=cadListarSubCategoria';
+       alert('Apagado com sucesso.');
+       window.location.href = '../tela/?tela=cadListarFoto';
        </script>
        ";
 }
@@ -75,6 +75,11 @@ elseif($_POST["idForm"] == "apUser"){
          $apagar->acessarValorId("$id");
          $apagar->atualizarDados();
        // echo "Chegou";
-       @header('Location: ../tela/?tela=cadListarProduto');
+       echo "
+       <script>
+       alert('Apagado com sucesso.');
+       window.location.href = '../tela/?tela=cadListarFoto';
+       </script>
+       ";
 }
 ?>

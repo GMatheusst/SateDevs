@@ -54,11 +54,11 @@ elseif($_POST["idForm"] == "CRImg") {
         $insert->acessarCampo("nomeImagem,pastaImagem");
         $insert->acessarDados("'$nome','$idImagem'");
         $insert->acessarCampoId("nomeImagem");
-        $insert->acessarValorId("'$nome'");
+        $insert->acessarValorId("$nome");
         $insert->inserirDados();
-        echo "
+       echo "
           <script>
-          alert('Por favor, preencha todos os campos.');
+          alert('Cadastro realizado com sucesso.');
           window.location.href = '../tela/?tela=cadListarFoto';
           </script>
           ";

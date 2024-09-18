@@ -45,6 +45,7 @@ class MostrarImagens extends CriaPaginacao
                             <tr>
                             <td class='fw-lighter'>".$dados["idImagem"]."</td>
                             <td class='fw-lighter'>".$dados['nomeImagem']."</td>
+                            <td class='fw-lighter'><img src='".$dados["pastaImagem"]."' alt='Imagem' class='img-fluid' height='200' width='120'></td>
                             <td class='align-content-around'>";
                             include("../tela/formAtualizarFoto.php");
                             echo "</td>

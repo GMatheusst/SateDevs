@@ -55,8 +55,9 @@
                 <table class="table table-light table-hover">
                     <thead class="">
                         <tr class="text-center table-dark">                        
-                            <th>Id</th>
-                            <th>Nome</th>
+                            <th width="10">Id</th>
+                            <th width="100">Nome</th>
+                            <th width="100">Imagem</th>
                             <th width="30"></th>
                             <th width="30"></th>
                         </tr>
