@@ -207,7 +207,12 @@ elseif($_POST["idForm"] == "CadFoto"){
       $insert->acessarCampoId("idUsuario");
       $insert->acessarValorId($id);
       $insert->atualizarDados();
-     
+      echo "
+    <script>
+    alert('Cadastro realizado com sucesso.');
+    window.location.href = '../tela/index.php';
+    </script>
+    ";
 }
 
 ?>
