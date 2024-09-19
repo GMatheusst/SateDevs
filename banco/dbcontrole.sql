@@ -39,7 +39,7 @@
     `dataFimEvento` date NOT NULL,
     `horaInicioEvento` time NOT NULL,
     `horaFimEvento` time NOT NULL DEFAULT '00:00:00',
-    `situacaoImagem` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
+    `situacaoEvento` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
     PRIMARY KEY (`idEvento`)
   ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -115,7 +115,7 @@
     `idUsuario` int NOT NULL AUTO_INCREMENT,
     `nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
     `senhaUsuario` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-      `ProfissaoUsuario` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+    `profissaoUsuario` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
     `emailUsuario` char(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
     `fotoUsuario` char(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
     `pastaFotoUsuario` char(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,

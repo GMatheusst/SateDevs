@@ -1,6 +1,6 @@
 <?php
 include_once("CriaPaginacao.php");
-class MostrarImagens extends CriaPaginacao
+class MostrarEventos extends CriaPaginacao
 {
     private $strSessao, $strNumPagina, $strPaginas, $strUrl;
     // Método que irá receber o número atual da página
@@ -23,11 +23,12 @@ class MostrarImagens extends CriaPaginacao
     {
         return $this->strNumPagina;
     }
-    public function mostrarImagem()
+    public function mostrarEventos()
     {
 
-        $sql = "SELECT * FROM tbimagem WHERE situacaoImagem = 'ATIVO' ORDER BY nomeImagem ASC";
+        $sql = "SELECT * FROM tbevento WHERE situacaoEvento = 'ATIVO' ORDER BY idEvento";
         $query = self::execSql($sql);
+        $totalItens = self::contarDados($query);
         $this->setParametro($this->strNumPagina); //Número de página atual
         $this->setFileName($this->strUrl); //Envia o nome da página atual
         $this->setInfoMaxPag(8); //Quantidade de itens por página
@@ -36,25 +37,29 @@ class MostrarImagens extends CriaPaginacao
         self::iniciaPaginacao(); //Executa o método que inicia a paginação
         $contador = 0; //Contador para gerar o número de páginas
         $cont = 0;
-        for ($i = 0; $i <= mysqli_num_rows($query); $i++) {
-            $i = $i + 1;
+        for ($i = 0; $i <= $totalItens; $i++) {
+           $cont++;
 
             if ($dados = self::results($query)) {
                 $contador++;
                 echo "
                             <tr>
-                            <td class='fw-lighter'>".$dados["idImagem"]."</td>
-                            <td class='fw-lighter'>".$dados['nomeImagem']."</td>
-                            <td class='fw-lighter'><img src='".$dados["pastaImagem"]."' alt='Imagem' class='img-fluid' height='200' width='120'></td>
+                            <td class='fw-lighter'>" . $dados['idEvento'] . "</td>
+                            <td class='fw-lighter'>" . $dados['nomeEvento'] . "</td>
+                            <td class='fw-lighter'>".$dados['localEvento']."</td>
+                            <td class='fw-lighter'>".$dados['dataInicioEvento']."</td>
+                            <td class='fw-lighter'>".$dados['dataFimEvento']."</td>
+                            <td class='fw-lighter'>".$dados['horaInicioEvento']."</td>
+                            <td class='fw-lighter'>".$dados['horaFimEvento']."</td>
                             <td class='align-content-around'>";
-                            include("../tela/formAtualizarFoto.php");
+                            include("../tela/formAtualizarEvento.php");
                             echo "</td>
                             <td class='align-content-around'>";
-                            include("../tela/formApagarFoto.php");
+                        include("../tela/formApagarEvento.php");
                             "</td>
                         </tr>";
-                self::setContador($contador);
-            }
+            self::setContador($contador);
+        }
         }
     }
 }

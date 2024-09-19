@@ -31,7 +31,7 @@ class MostrarProdutos extends CriaPaginacao
         $totalItens = self::contarDados($query);
         $this->setParametro($this->strNumPagina); //Número de página atual
         $this->setFileName($this->strUrl); //Envia o nome da página atual
-        $this->setInfoMaxPag(1); //Quantidade de itens por página
+        $this->setInfoMaxPag(8); //Quantidade de itens por página
         $this->setMaximoLinks(6); //Quantidade de links por página 1 à 6
         $this->setSQL($sql); //Envia a sql criada
         self::iniciaPaginacao(); //Executa o método que inicia a paginação

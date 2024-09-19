@@ -82,4 +82,21 @@ elseif($_POST["idForm"] == "apUser"){
        </script>
        ";
 }
+elseif($_POST["idForm"] == "apEvento"){
+         $id = @$_POST["id"];
+         $apagar->acessarTabela("tbevento");
+         $apagar->acessarCampo("situacaoEvento='INATIVO'");
+         $apagar->acessarCampoId("idEvento");
+         $apagar->acessarValorId("$id");
+         $apagar->atualizarDados();
+         echo "
+         <script>
+         alert('Apagado com sucesso.');
+         window.location.href = '../tela/?tela=cadListarEvento';
+         </script>
+         ";
+}
+else{
+  echo"ERRO FORA DOS FORMULARIOS";
+}
 ?>

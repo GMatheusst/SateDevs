@@ -225,6 +225,36 @@ if(empty($_POST["email"]) || empty($_POST["situacao"])){
                     ";
   }
 }
+elseif (@$_POST["idForm"] == "atEvento") {
+  if (empty($_POST["nome"]) || empty($_POST["local"]) || empty($_POST["dataInicio"]) || empty($_POST["dataFim"]) || empty($_POST["horaInicio"]) || empty($_POST["horaFim"])) {
+    echo "
+    <script>
+    alert('Por favor, preencha todos os campos.');
+    window.location.href = '../tela/?tela=cadListarEvento';
+    </script>
+    ";
+  }
+  else{
+    $id = @$_POST["id"];
+    $nome = @$_POST["nome"];
+    $local = @$_POST["local"];
+    $dataInicio = @$_POST["dataInicio"];
+    $dataFim = @$_POST["dataFim"];
+    $horaInicio = @$_POST["horaInicio"];
+    $horaFim = @$_POST["horaFim"];
+    $atualizar->acessarTabela("tbevento");
+    $atualizar->acessarCampo("nomeEvento='$nome',localEvento='$local',dataInicioEvento='$dataInicio',dataFimEvento='$dataFim',horaInicioEvento='$horaInicio',horaFimEvento='$horaFim'");
+    $atualizar->acessarCampoId("idEvento");
+    $atualizar->acessarValorId($id);
+    $atualizar->atualizarDados();
+    echo "
+    <script>
+    alert('Atualizado com sucesso.');
+    window.location.href = '../tela/?tela=cadListarEvento';
+    </script>
+    ";
+  }
+}
 else{
   echo"ERRO FORA DOS FORMULARIOS";
 }

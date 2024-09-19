@@ -11,14 +11,15 @@ Class InserirDados extends ManipularDados{
 * $this->acessarDados("'valor'");
 * self::inserirDados();
 */
-public function InserirProdutos($nome,$desc,$quant,$preço){
+public function CadastroDeUsuario($nome,$emai,$senha){
     
-$this->acessarTabela("tbproduto");
-$this->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto");
-$this->acessarDados("'$nome','$desc','$quant','$preço'");
-$this->acessarCampoId("nomeProduto");
-$this->acessarValorId("'$nome'");
-self::inserirDados();
+    $this->acessarTabela("tbusuario");
+    $this->acessarCampo("nomeUsuario,emailUsuario,senhaUsuario");
+    $this->acessarDados("'$nome','$emai','$senha'");
+    $this->acessarCampoId("nomeUsuario");
+    $this->acessarValorId("$nome");
+    self::inserirDados();
+
 }
 
 

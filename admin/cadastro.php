@@ -80,7 +80,7 @@
     </svg>
 
     <!-- Formulário de login -->
-    <form action="index.php" method="post">
+    <form action="cadastro.php" method="post">
       <input type="hidden" name="idForm" value="formLogin">
       <input type="hidden" name="nome">
 
@@ -89,30 +89,29 @@
       </div>
       
       <div class="mb-3">
+        <input type="email" class="form-control" name="email" placeholder="Email" required>
+      </div>
+
+      <div class="mb-3">
         <input type="password" class="form-control" name="senha" placeholder="Password" required>
       </div>
 
-      <div class="remember-me">
-       
-        <a href="cadastro.php" class="forgot-password">Não possuir conta? Cadastre-se!!</a>
-      </div>
-
       <div class="d-grid mt-4">
-        <button type="submit" name="enviar" class="btn">Login</button>
+        <button type="submit" name="enviar" class="btn">Cadastrar</button>
       </div>
 
       <!-- PHP para validação de login -->
       <?php
-        if(empty($_POST["usuario"]) || empty($_POST["senha"])) {
+        if(empty($_POST["usuario"]) || empty($_POST["senha"]) || empty($_POST["email"])) {
           echo "";
         } else if(isset($_POST["enviar"])) {
-          echo "<div class='alert alert-danger my-3'>";
-          include_once("classe/VerificarLogin.php");
-          $dados = new VerificarLogin();
-          $dados->retornarUsuario($_POST["usuario"]);
-          $dados->retornarSenha($_POST["senha"]);
-          $dados->verificarLogin();
-          echo "</div>";
+            include_once("classe/CadastrarDados.php");
+            $cadastro = new InserirDados();
+            $cadastro->CadastroDeUsuario($_POST["usuario"],$_POST["email"],$_POST["senha"]);
+            echo "<div class='alert alert-success my-3'>";
+            echo "Cadastro realizado com sucesso!";
+            echo "<a href='index.php' class='alert-link'> Voltar ao login</a>";
+            echo "</div>";
         }
       ?>
     </form>

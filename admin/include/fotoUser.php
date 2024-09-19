@@ -48,12 +48,16 @@ public function getFotoUsuario(){
     }
 }
 public function getProfissaoUsuario(){
-    $user = $_SESSION["usuario"] ;
-    $sql = "SELECT profissaoUsuario FROM tbusuario WHERE nomeUsuario = '$user'";
-    $query = self::execSql($sql);
-    $dados = self::listarDados($query);
-    
-    echo $dados["profissaoUsuario"];
+        $user = $_SESSION["usuario"];
+        $sql = "SELECT * FROM tbusuario WHERE nomeUsuario = '$user'";
+        $query = self::execSql($sql);
+        $dados = self::listarDados($query);
+        if ($dados["ProfissaoUsuario"] != null) {
+        echo $dados["ProfissaoUsuario"];
+    }
+    else{
+            echo "";
+    }
 }
 }
 ?>
@@ -65,7 +69,8 @@ public function getProfissaoUsuario(){
        ?>
     </div>
     <div class="d-none d-md-block text-center lead text-light"><?php echo"Bem Vindo ".$_SESSION['usuario']; ?></div>
-    <div class="d-none d-md-block text-center lead text-light fs-4"><?php
+    <div class="d-none d-md-block text-center lead text-light fs-4">
+    <?php
     $profissao = new Usuario();
     $profissao->getProfissaoUsuario();
     ?></div>

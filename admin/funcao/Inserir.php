@@ -214,5 +214,36 @@ elseif($_POST["idForm"] == "CadFoto"){
     </script>
     ";
 }
-
+elseif($_POST["idForm"] == "CREvent"){
+  if (empty($_POST["nome"]) || empty($_POST["local"]) || empty($_POST["dataInicio"]) || empty($_POST["dataFim"]) || empty($_POST["horaInicio"]) || empty($_POST["horaFim"])) {
+    echo "
+    <script>
+    alert('Por favor, preencha todos os campos.');
+    window.location.href = '../tela/?tela=cadListarEvento';
+    </script>
+    ";
+  } else {
+    $nome = @$_POST["nome"];
+    $local = @$_POST["local"];
+    $dataInicio = @$_POST["dataInicio"];
+    $dataFim = @$_POST["dataFim"];
+    $horaInicio = @$_POST["horaInicio"];
+    $horaFim = @$_POST["horaFim"];
+    $insert->acessarTabela("tbevento");
+    $insert->acessarCampo("nomeEvento,localEvento,dataInicioEvento,dataFimEvento,horaInicioEvento,horaFimEvento");
+    $insert->acessarDados("'$nome','$local','$dataInicio','$dataFim','$horaInicio','$horaFim'");
+    $insert->acessarCampoId("nomeEvento");
+    $insert->acessarValorId('$nome');
+    $insert->inserirDados();
+    echo "
+    <script>
+    alert('Cadastro realizado com sucesso.');
+    window.location.href = '../tela/?tela=cadListarEvento';
+    </script>
+    ";
+  }
+}
+else{
+  echo"ERRO FORA DOS FORMULARIOS";
+}
 ?>
