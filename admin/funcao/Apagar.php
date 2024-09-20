@@ -96,6 +96,20 @@ elseif($_POST["idForm"] == "apEvento"){
          </script>
          ";
 }
+elseif($_POST["idForm"] == "apUsr"){
+         $id = @$_POST["id"];
+         $apagar->acessarTabela("tbusuario");
+         $apagar->acessarCampo("situacaoUsuario='INATIVO'");
+         $apagar->acessarCampoId("idUsuario");
+         $apagar->acessarValorId("$id");
+         $apagar->atualizarDados();
+         echo "
+         <script>
+         alert('Apagado com sucesso.');
+         window.location.href = '../tela/?tela=cadListarUsuario';
+         </script>
+         ";
+}
 else{
   echo"ERRO FORA DOS FORMULARIOS";
 }

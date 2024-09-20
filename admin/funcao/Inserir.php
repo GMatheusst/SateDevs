@@ -240,9 +240,11 @@ elseif($_POST["idForm"] == "CREvent"){
     alert('Cadastro realizado com sucesso.');
     window.location.href = '../tela/?tela=cadListarEvento';
     </script>
+    // 
     ";
   }
-}
+} 
+
 else{
   echo"ERRO FORA DOS FORMULARIOS";
 }

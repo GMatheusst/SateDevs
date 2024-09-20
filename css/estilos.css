@@ -159,9 +159,7 @@ ul li a{
   padding-left: 10px;
   text-decoration: none;
 }
-ul li a:hover{
-  background-color: #ffffff !important;
-}
+
 ul ul{
   display: none;
   position: absolute;
