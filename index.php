@@ -49,14 +49,12 @@
 
         /* Botões e Formulários */
         .btn-custom {
-            background-color: #198754;
+           
             color: #fff;
             border-radius: 50px;
         }
 
-        .btn-custom:hover {
-            background-color: #145c32;
-        }
+       
 
         /* Estilo dos cards */
         .card {
@@ -103,7 +101,7 @@
                         <a class="nav-link active" href="#"><i class="bi bi-house-door-fill me-2"></i>Home</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false"><i class="bi bi-box-seam me-2"></i>Produtos</a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Alimentos</a>
@@ -143,6 +141,11 @@
                     <li class="nav-item"><a class="nav-link" href="?sessao=contato"><i
                                 class="bi bi-envelope me-2"></i>Contato</a></li>
                 </ul>
+                 <div class="col-md-2 mt-2">
+                    <div class="d-grid gap-2">
+                        <a href="admin/index.php" class="btn btn-custom "><i class="bi bi-person-circle"></i>
+                            Login</a>
+                    </div>
             </div>
         </div>
     </nav>
@@ -151,15 +154,9 @@
     <main>
         <div class="container mt-4">
             <div class="row">
-                <!-- Menu lateral e Login -->
-                <div class="col-md-3 mb-4">
-                    <div class="d-grid gap-2">
-                        <a href="admin/index.php" class="btn btn-custom btn-lg"><i class="bi bi-person-circle"></i>
-                            Login</a>
-                    </div>
-
+                <div class="col-md-3">
                     <!-- News Letter -->
-                    <div class="card mt-4">
+                    <div class="card mt-2">
                         <div class="card-body">
                             <h5 class="card-title text-center text-success">News Letter</h5>
                             <p class="card-text text-center small text-muted">Cadastre-se para receber nossas ofertas!
@@ -167,7 +164,7 @@
                             <form action="" method="post">
                                 <input type="email" class="form-control mb-2" placeholder="seuemail@exemplo.com"
                                     required>
-                                <button type="submit" class="btn btn-custom w-100">Enviar</button>
+                                <button type="submit" class="btn btn-custom btn-success w-100">Enviar</button>
                             </form>
                         </div>
                     </div>
@@ -175,7 +172,7 @@
 
                 <!-- Conteúdo dinâmico -->
                 <div class="col-md-9">
-                    <div class="card p-4">
+                    <div class="card p-4 mb-3">
                         <?php
                         include_once("classe/trocarUrl.php");
                         $url = new TrocarUrl();

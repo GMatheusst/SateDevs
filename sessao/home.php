@@ -1,27 +1,4 @@
-                            <!-- Quadro seja bem vindo -->
-                            <section>
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="col border mt-3 rounded border-primary">
-                                            <div class="d-flex mx-1 my-3 px-2 py-2 image-div alert alert-success"
-                                                role="alert">
-                                                <div class="col-8 col-md-9 col-xl-10">
-                                                    <p class="text-black lead">Seja bem vindo!</p>
-                                                    <p class="lead fs-6 text-black">Lorem ipsum dolor sit amet
-                                                        consectetur
-                                                        adipisicing elit. Neque sit, ut pariatur sed tempore magnam
-                                                        tenetur
-                                                        cupiditate provident, omnis excepturi non accusantium,
-                                                        reiciendis
-                                                        assumenda? Tenetur possimus odit obcaecati quisquam dolor.</p>
-                                                </div>
-                                                <div class="col-4 col-md-3 col-xl-2"><img src="img/img-balanco.png"
-                                                        alt="" class="image"></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
+                        
                             <!-- Produtos em destaque título -->
                             <div class="border-bottom mt-3">
                                 <p class="lead text-primary">Ofertas da Semana</p>
