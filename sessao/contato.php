@@ -1,58 +1,50 @@
-<!-- Cabeçalho -->
-<section class="">
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2 class="bg_h2 text-success my-4">Contato</h2>
-                <p class="fs-6 text-secondary fw-light font-monospace">Lorem ipsum dolor sit amet consectetur
-                    adipisicing elit.
-                    Molestiae
-                    delectus dolores
-                    deserunt totam
-                    accusamus quas nesciunt quo vitae fugit deleniti recusandae tempore tempora est consequuntur
-                    cupiditate, distinctio reiciendis expedita officiis?</p>
-                <div class="border-bottom lead text-info mb-3">Dê a sua opinião</div>
-            </div>
-        </div>
-    </div>
-</section>
+
 <!-- Formulário para contato -->
-<section>
+<section class="py-4">
     <div class="container">
-        <div class="row">
-            <div class="col">
-                <form action="" method="post">
-                    <div class="input-group-sm d-flex mb-1">
-                        <label for="Nome" class="input-group-text">Nome</label>
-                        <input type="text" name="nome" placeholder="Digite seu nome aqui"
-                            class="input-group-text form-control" id="">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <form action="../projetoMercado/Classe/Inserir.php" method="post" class="shadow p-4 rounded bg-white">
+                    <input type="hidden" name="idForm" value="adContato">
+
+                    <div class="mb-3">
+                        <label for="nome" class="form-label">Nome</label>
+                        <input type="text" name="nome" placeholder="Digite seu nome" class="form-control" id="nome"
+                            required>
                     </div>
-                    <div class="input-group-sm d-flex mb-1">
-                        <label for="E-mail" class="input-group-text">E-mail</label>
-                        <input type="text" name="email" placeholder="Digite seu e-mail aqui"
-                            class="input-group-text form-control" id="">
+
+                    <div class="mb-3">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" name="email" placeholder="Digite seu e-mail" class="form-control" id="email"
+                            required>
                     </div>
-                    <div class="input-group-sm d-flex mb-1">
-                        <label for="Cidade" class="input-group-text">Cidade</label>
-                        <input type="text" name="cidade" placeholder="Cidade" class="input-group-text form-control"
-                            id="">
+
+                    <div class="mb-3">
+                        <label for="cidade" class="form-label">Cidade</label>
+                        <input type="text" name="cidade" placeholder="Digite sua cidade" class="form-control"
+                            id="cidade" required>
                     </div>
-                    <div class="input-group-sm d-flex mb-1">
-                        <label for="Estado" class="input-group-text">Estado</label>
-                        <input type="text" name="estado" placeholder="Estado/SIGLA"
-                            class="input-group-text form-control" id="">
+
+                    <div class="mb-3">
+                        <label for="estado" class="form-label">Estado</label>
+                        <input type="text" name="estado" placeholder="Digite seu estado (SIGLA)" class="form-control"
+                            id="estado" required>
                     </div>
-                    <div class="input-group-sm d-flex mb-1">
-                        <label for="Assunto" class="input-group-text">Assunto</label>
-                        <input type="text" name="assunto" placeholder="Assunto" class="input-group-text form-control"
-                            id="">
+
+                    <div class="mb-3">
+                        <label for="assunto" class="form-label">Assunto</label>
+                        <input type="text" name="assunto" placeholder="Assunto do contato" class="form-control"
+                            id="assunto" required>
                     </div>
-                    <div class="input-group-sm d-flex mb-1">
-                        <label for="Assunto" class="input-group-text">Assunto</label>
-                        <textarea name="mensagem" class="input-group-text form-control" id=""></textarea>
+
+                    <div class="mb-4">
+                        <label for="mensagem" class="form-label">Mensagem</label>
+                        <textarea name="mensagem" placeholder="Digite sua mensagem aqui" class="form-control"
+                            id="mensagem" rows="4" required></textarea>
                     </div>
-                    <div class="input-group-sm d-flex my-3">
-                        <button type="submit" class="btn btn-outline-success">Enviar</button>
+
+                    <div class="d-grid">
+                        <button type="submit" name="enviar" class="btn btn-success btn-lg">Enviar</button>
                     </div>
                 </form>
             </div>

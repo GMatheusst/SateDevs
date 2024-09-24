@@ -1,4 +1,4 @@
-
+<?php include_once("classe/EnviaNewsLetter.php");?>
 <!doctype html>
 <html lang="pt-br">
 
@@ -98,7 +98,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#"><i class="bi bi-house-door-fill me-2"></i>Home</a>
+                        <a class="nav-link active" href="?sessao=home"><i class="bi bi-house-door-fill me-2"></i>Home</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
@@ -156,22 +156,24 @@
             <div class="row">
                 <div class="col-md-3">
                     <!-- News Letter -->
-                    <div class="card mt-2">
-                        <div class="card-body">
-                            <h5 class="card-title text-center text-success">News Letter</h5>
-                            <p class="card-text text-center small text-muted">Cadastre-se para receber nossas ofertas!
-                            </p>
-                            <form action="" method="post">
-                                <input type="email" class="form-control mb-2" placeholder="seuemail@exemplo.com"
-                                    required>
-                                <button type="submit" class="btn btn-custom btn-success w-100">Enviar</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
+                   <?php
+                   if (@$_GET["sessao"] == "home" || @$_GET["sessao"] == null) {
+                       include_once("include/newsLetter.php");
+                   }
+                   else {
+                       echo "";
+                   }
+                ?>
+                   </div>
                 <!-- Conteúdo dinâmico -->
-                <div class="col-md-9">
+              <?php  
+               if (@$_GET["sessao"] == "home" || @$_GET["sessao"] == null) {
+                  echo "<div class='col-md-9'> ";
+               }
+               else {
+                  echo "<div class='col-md-12'>";
+               }
+              ?>
                     <div class="card p-4 mb-3">
                         <?php
                         include_once("classe/trocarUrl.php");
