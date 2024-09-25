@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
-                <form action="../projetoMercado/Classe/Inserir.php" method="post" class="shadow p-4 rounded bg-white">
+                <form action="" method="post" class="shadow p-4 rounded bg-white">
                     <input type="hidden" name="idForm" value="adContato">
 
                     <div class="mb-3">
@@ -48,18 +48,20 @@
                     </div>
                 </form>
                 <?php 
-                    $nome = @$_POST["nome"];
-                    $email = @$_POST["email"];
-                    $cidade = @$_POST["cidade"];
-                    $estado = @$_POST["estado"];
-                    $assunto = @$_POST["assunto"];
-                    $mensagem = @$_POST["mensagem"];
-                    if (empty($email)) {
-                        echo "Email não pode ser vazio";
+                include_once("classe/EnviaContato.php");
+                $nome = @$_POST["nome"];
+                $email = @$_POST["email"];
+                $cidade = @$_POST["cidade"];
+                $estado = @$_POST["estado"];
+                $assunto = @$_POST["assunto"];
+                $mensagem = @$_POST["mensagem"];
+
+                    if (empty($nome)) {
+                        echo "";
                     } 
-                    elseif (isset($_POST["email"])) {
-                        $email = new EnviaContato();
-                        $email->enviaContato( $nome,$email, $cidade, $estado, $assunto, $mensagem);
+                    elseif (isset($nome)) {
+                    $email = new EnviaContato();
+                    $email->EnviaContato( $nome,@$_POST["email"], $cidade, $estado, $assunto, $mensagem);  
                          }
                     ?>
             </div>

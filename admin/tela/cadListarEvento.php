@@ -77,8 +77,12 @@
                             <th class="">Data Fim</th>
                             <th class="">Hora Inicio</th>
                             <th class="">Hora Fim</th>
-                            <th width="30"></th>
-                            <th width="30"></th>
+                            <th class="px-3 py-2" style="width: 30px;">
+                    <i class="bi bi-pencil-square text-info" title="Editar"></i>
+                    </th>
+                    <th class="px-3 py-2" style="width: 30px;">
+                    <i class="bi bi-trash text-danger" title="Excluir"></i>
+                    </th>
                         </tr>
                     </thead>
                     <tbody>

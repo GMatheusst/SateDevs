@@ -244,7 +244,40 @@ elseif($_POST["idForm"] == "CREvent"){
     ";
   }
 } 
+elseif($_POST["idForm"] == "CRNot"){
+  if(empty($_POST["idUsuario"]) || empty($_POST["desc"])){
+    echo "
+    <script>
+    alert('Por favor, preencha todos os campos.');
+    window.location.href = '../tela/?tela=cadListarNotificacao';
+    </script>
+    ";
+  } else {
+    $id = @$_POST["idUsuario"];
+    $texto = @$_POST["desc"];
+    class ListarNomeUsuario extends ManipularDados{
+      public function ListarUsuario(){
+        $sql = "SELECT * FROM tbusuario ORDER BY nomeUsuario ASC";
+        $query = self::execSql($sql);
+        $dados = self::listarDados($query);
+       return $nomeUsuario = $dados["nomeUsuario"];
+      }
+    
+    }
 
+   $userName = new ListarNomeUsuario();
+  $nomeUsuario = $userName->ListarUsuario();
+  
+    $idUsuario = @$_POST["idUsuario"];
+    $insert->acessarTabela("tbnotificacao");
+    $insert->acessarCampo("idUsuario,nomeUsuario,mensagemNotificacao");
+    $insert->acessarDados("'$id','$nomeUsuario','$texto'");
+    $insert->acessarCampoId("nomeUsuario");
+    $insert->acessarValorId("$nomeUsuario");
+    $insert->inserirDados();
+    
+  }
+}
 else{
   echo"ERRO FORA DOS FORMULARIOS";
 }

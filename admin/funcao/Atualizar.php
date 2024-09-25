@@ -255,6 +255,63 @@ elseif (@$_POST["idForm"] == "atEvento") {
     ";
   }
 }
+elseif (@$_POST["idForm"] == "atNot") {
+  if (empty($_POST["desc"])) {
+    echo "
+    <script>
+    alert('Por favor, preencha todos os campos.');
+    window.location.href = '../tela/?tela=cadListarNotificacao';
+    </script>
+    ";
+  } 
+  elseif (empty($_POST["idUsuario"])) {
+    $idNot = @$_POST["id"];
+    $texto = @$_POST["desc"];
+    $atualizar->acessarTabela("tbnotificacao");
+    $atualizar->acessarCampo("mensagemNotificacao='$texto'");
+    $atualizar->acessarCampoId("idNotificacao");
+    $atualizar->acessarValorId($idNot);
+    $atualizar->atualizarDados(); 
+
+    echo "
+    <script>
+    alert('Atualizado com sucesso.');
+    window.location.href = '../tela/?tela=cadListarNotificacao';
+    </script>
+    ";
+
+  }
+  else {
+    $id = @$_POST["idUsuario"];
+    $idNot = @$_POST["id"];
+    $texto = @$_POST["desc"];
+    class ListarNomeUsuario extends ManipularDados{
+      public function ListarUsuario(){
+        $sql = "SELECT * FROM tbusuario ORDER BY nomeUsuario ASC";
+        $query = self::execSql($sql);
+        $dados = self::listarDados($query);
+       return $nomeUsuario = $dados["nomeUsuario"];
+      }
+    
+    }
+    $userName = new ListarNomeUsuario();
+    $nomeUsuario = $userName->ListarUsuario();
+
+    $atualizar->acessarTabela("tbnotificacao");
+    $atualizar->acessarCampo("idUsuario='$id',nomeUsuario='$nomeUsuario',mensagemNotificacao='$texto'");
+    $atualizar->acessarCampoId("idNotificacao");
+    $atualizar->acessarValorId($idNot);
+    $atualizar->atualizarDados();
+    
+    echo "
+    <script>
+    alert('Atualizado com sucesso.');
+    window.location.href = '../tela/?tela=cadListarNotificacao';
+    </script>
+    ";
+
+  }
+}
 else{
   echo"ERRO FORA DOS FORMULARIOS";
 }

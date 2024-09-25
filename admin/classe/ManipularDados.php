@@ -97,12 +97,12 @@ class ManipularDados extends MinhaConexao{
             try {
                 
             $this->sql = "DELETE FROM $this->tabela WHERE $this->campo = '$this->dados'";
-                var_dump($this->sql = "DELETE FROM $this->tabela WHERE $this->campo = '$this->dados'");
+                
                 if (self::execSql($this->sql)) {
                     $this->status = "Apagado com sucesso.";
                 }
             } catch (Exception $e) {
-                echo "<b><center>Função getTotalDadosAtualizar</center></b>";
+                echo "<b><center>Função ApagarDados</center></b>";
                 echo "<p><b>Erro de SQL: </b> " . $this->sql."</p>";
                 echo "<p><b>Erro ao apagar o dado. </b>" . $e->getMessage()."</p>";
             }

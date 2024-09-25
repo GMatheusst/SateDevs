@@ -62,14 +62,18 @@
             <div class="col table-responsive">
                 <table class="table table-light table-hover">
                     <thead class="">
-                        <tr class="text-center table-dark">
+                    <tr class="text-center table-dark text-light align-middle">
                             <th>Id</th>
                             <th>Produto</th>
                             <th class="">Descrição</th>
                             <th class="">Quantidade</th>
                             <th>Preço</th>
-                            <th width="30"></th>
-                            <th width="30"></th>
+                            <th class="px-3 py-2" style="width: 30px;">
+                    <i class="bi bi-pencil-square text-info" title="Editar"></i>
+                    </th>
+                    <th class="px-3 py-2" style="width: 30px;">
+                    <i class="bi bi-trash text-danger" title="Excluir"></i>
+                    </th>
                         </tr>
                     </thead>
                     <tbody>

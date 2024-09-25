@@ -47,11 +47,7 @@ class MostrarNewsLetters extends CriaPaginacao
                             <td class='fw-lighter'>" . $newsletter["idNewsLetter"] . "</td>
                             <td class='fw-lighter'>" . $newsletter["emailNewsLetter"] . "</td>
                              <td class='fw-lighter'>" . $newsletter["situacaoNewsLetter"] . "</td>
-                                     <td class='align-content-around'>
-                                    ";
-                include('../tela/formAtualizarNewsLetter.php');
-                "
-                                                 </td>
+                                     
                                 <td class='align-content-around'>
                                     ";
                 include('../tela/formApagarProduto.php');

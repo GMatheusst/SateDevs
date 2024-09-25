@@ -44,7 +44,7 @@
         <a class="col-sm-2 d-md-none link-light link-opacity-75-hover" href="?tela=cadListarUsuario"><i
                 class="bi bi-chat-left-text"></i></a>
         <a class="d-none d-md-inline-block link-underline link-underline-opacity-0 link-light link-opacity-75-hover"
-            href="?tela=cadListarUsuario"><i class="bi bi-chat-left-text"></i> Usuário</a>
+            href="?tela=cadListarNotificacao"><i class="bi bi-chat-left-text"></i> Notificações</a>
     </li>
     <!-- Intens para relatório -->
     <div class="d-none d-md-inline-block text-start my-2 text-light fs-5 text-center lead">Relatórios</div>

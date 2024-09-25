@@ -1,5 +1,5 @@
 <?php
-abstract class MinhaConexao
+class MinhaConexao
 {
     protected $servidor, $usuario, $senha, $banco, $conectar, $sql, $query, $dados, $totalDados;
     /**Método construtor para realizar uma conexão no banco de dados, este método será executado automaticamente sempre que esta classe for herdada */

@@ -48,22 +48,18 @@ class MostrarNotificacao extends CriaPaginacao
             if ($dados = self::results($query)) {
                 $contador++;
                 echo "
-                            <tr>
-                                <td class='fw-lighter'>" . $dados["idNotificacao"] . "</td>
-                                <td class='fw-lighter'>" . $dados["nomeUsuario"] . "</td>
-                                <td class='fw-lighter'>" . $dados["mensagemNotificao"] . "</td>
-                                <!-- Button update -->
-                                <td class='align-content-around'>
-                                ";
-                include('../tela/formAtualizarNotificacao.php');
-                echo "
-                                </td>
-                                <td class='align-content-around'>";
-                include('../tela/formApagarNotificacao.php');
-                echo "
-                                </td>
-                            </tr>
-                ";
+                <tr>
+                <td class='fw-lighter'>" . $dados["idNotificacao"] . "</td>
+                <td class='fw-lighter'>" . $dados["nomeUsuario"] . "</td>
+                <td class='fw-lighter'>" . $dados["mensagemNotificacao"] . "</td>
+                <!-- Button update -->
+                <td class='align-content-around'>";
+                include("../tela/formAtualizarNotificacao.php");
+                echo "</td>
+                <td class='align-content-around'>";
+            include("../tela/formApagarNotificacao.php");
+                "</td>
+            </tr>";
                 self::setContador($contador);
             }
         }
@@ -80,39 +76,57 @@ class MostrarNotificacao extends CriaPaginacao
 
     public function mostrarNotificacaoUsuario()
     {
-        $id = $_SESSION["idUsuario"];
-        $sql = "SELECT * FROM tbnotificacao,tbusuario WHERE tbnotificacao.nomeUsuario = tbusuario.nomeUsuario AND tbusuario.idUsuario = '$id' ORDER BY tbnotificacao.idNotificacao DESC";
+        $nome = $_SESSION["nome"];
+        $sql = "SELECT * FROM tbusuario WHERE nomeUsuario =  '$nome' ";
+        $query = self::execSql($sql);
+        $dados = self::listarDados($query);
+        $id = $dados["idUsuario"];
+        $sql = "SELECT * FROM tbnotificacao,tbusuario WHERE tbnotificacao.nomeUsuario = tbusuario.nomeUsuario AND tbusuario.idUsuario = '$id' ORDER BY tbnotificacao.idNotificacao DESC LIMIT 10";
+       
+       
         $query = self::execSql($sql);
         echo "
-                    <div class='col-10 text-end'>
-                         <button type='button' class='btn btn-primary position-relative' data-bs-toggle='offcanvas'
-                             data-bs-target='#offcanvasRight' aria-controls='offcanvasRight'>
-                             <i class='bi bi-bell'></i>
-                             <span
-                                 class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'>
-                                 " . self::contarDados($query) . "
-                                 <span class='visually-hidden'>unread messages</span>
-                             </span>
-                         </button>
-                         <div class='offcanvas offcanvas-end bg-wite' tabindex='-1' id='offcanvasRight'
-                             aria-labelledby='offcanvasRightLabel'>
-                             <div class='offcanvas-body p-0'>
-                                <h1 class='lead text-center mt-1'>Notificações</h1>                                
+        <div class='col-10 text-end'>
+            <button type='button' class='btn btn-primary position-relative' data-bs-toggle='offcanvas'
+                data-bs-target='#offcanvasRight' aria-controls='offcanvasRight'>
+                <i class='bi bi-bell fs-4'></i>
+                <span class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm'>
+                    " . self::contarDados($query) . "
+                    <span class='visually-hidden'>unread messages</span>
+                </span>
+            </button>
+            <div class='offcanvas offcanvas-end shadow-lg' tabindex='-1' id='offcanvasRight' aria-labelledby='offcanvasRightLabel'>
+                <div class='offcanvas-header bg-primary text-white'>
+                    <h5 class='offcanvas-title' id='offcanvasRightLabel'>Notificações</h5>
+                    <button type='button' class='btn-close btn-close-white' data-bs-dismiss='offcanvas' aria-label='Close'></button>
+                </div>
+                <div class='offcanvas-body p-0'>
+                    <div class='list-group list-group-flush'>
         ";
+        
         while ($dados = self::listarDados($query)) {
             echo "
-                                <div class='mt-1 p-2 bg-light-subtle'>
-                                    <h5>" . $dados["nomeUsuario"] . "</h5>
-                                    <p class='mb-0'>" . $dados["mensagemNotificao"] . "</p> 
-                                </div>
-                                
-                ";
-        }
-        echo "
-                                
-                            </div>
+                <div class='list-group-item d-flex justify-content-between align-items-center bg-light-subtle py-3 px-4 border-0 border-bottom'>
+                    <div class='d-flex align-items-center'>
+                        <div class='me-3'>
+                            <img src='" . $dados['fotoUsuario'] . "' alt='' class='img-fluid rounded-circle' height='50' width='50'>
+                        </div>
+                        <div>
+                            <h5 class='mb-1 fw-bold '>" . $dados['nomeUsuario'] . "</h5>
+                            <p class='mb-0 text-muted small'>" . $dados['mensagemNotificacao'] . "</p>
                         </div>
                     </div>
+                  
+                </div>
+            ";
+        }
+        
+        echo "
+                    </div>
+                </div>
+            </div>
+        </div>
         ";
+        
     }
 }

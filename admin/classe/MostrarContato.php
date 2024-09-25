@@ -52,15 +52,7 @@ class MostrarContato extends CriaPaginacao
                                             <td class='fw-lighter'>" . $contato["assuntoContato"] . "</td>
                                              <td class='fw-lighter'>" . $contato["mensagemContato"] . "</td>
                             <td class='fw-lighter'>" . $contato["emailContato"] . "</td>
-                                     <td class='align-content-around'>
-                                     ";
-                                     include('../tela/formAtualizarContato.php');
-                                    "
-                                                 </td>
-                                <td class='align-content-around'>
-                                    ";
-                include('../tela/formApagarContato.php');
-                " 
+                                     
                         </tr>
                 ";
                 self::setContador($contador);

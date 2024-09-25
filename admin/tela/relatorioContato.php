@@ -24,7 +24,7 @@
                             <th>Assunto</th>
                             <th>Mensagem</th>
                             <th>Email</th>
-                            <th>At/Del</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
@@ -50,8 +50,10 @@
     <div class="container">
         <div class="row">
             <div class="col d-flex flex-column align-items-center">
-                <ul id="paginacao" class="nav nav-1 d-flex">
-                    <li><?php $contato->geraNumeros(); ?></li>
+                <ul class="pagination">
+                   <?php 
+                   $contato->geraNumeros();
+                   ?>
                 </ul>
             </div>
         </div>

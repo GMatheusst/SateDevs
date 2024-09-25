@@ -20,8 +20,10 @@
                             <th>Id</th>
                             <th>Email</th>
                             <th class="">Situação</th>
-                            <th width="30">Alt</th>
-                            <th width="30">Del</th>
+                            
+                    <th class="px-3 py-2" style="width: 30px;">
+                    <i class="bi bi-trash text-danger" title="Excluir"></i>
+                    </th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,13 +43,14 @@
         </div>
     </div>
 </div>
-<!-- Paginação -->
 <div class="section">
     <div class="container">
         <div class="row">
             <div class="col d-flex flex-column align-items-center">
-                <ul id="paginacao" class="nav nav-1 d-flex">
-                    <li><?php $newsletters->geraNumeros(); ?></li>
+                <ul class="pagination">
+                   <?php 
+                   $newsletters->geraNumeros();
+                   ?>
                 </ul>
             </div>
         </div>

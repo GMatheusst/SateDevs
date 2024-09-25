@@ -110,6 +110,22 @@ elseif($_POST["idForm"] == "apUsr"){
          </script>
          ";
 }
+elseif($_POST["idForm"] == "apNot"){
+         $id = @$_POST["id"];
+         $apagar->acessarTabela("tbnotificacao");
+         $apagar->acessarCampo("idNotificacao");
+         $apagar->acessarDados("$id");
+         $apagar->acessarCampoId("idNotificacao");
+         $apagar->acessarValorId("$id");
+         $apagar->apagarDados();
+         echo "
+         <script>
+         alert('Apagado com sucesso.');
+         window.location.href = '../tela/?tela=cadListarNotificacao';
+         </script>
+         ";
+        
+}
 else{
   echo"ERRO FORA DOS FORMULARIOS";
 }

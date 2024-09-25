@@ -48,9 +48,9 @@
         <div class="row">
             <div class="col d-flex flex-column align-items-center">
                 <ul class="pagination">
-                    <?php
+                   <?php 
                    $usuario->geraNumeros();
-                    ?>
+                   ?>
                 </ul>
             </div>
         </div>
