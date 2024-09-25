@@ -47,6 +47,21 @@
                         <button type="submit" name="enviar" class="btn btn-success btn-lg">Enviar</button>
                     </div>
                 </form>
+                <?php 
+                    $nome = @$_POST["nome"];
+                    $email = @$_POST["email"];
+                    $cidade = @$_POST["cidade"];
+                    $estado = @$_POST["estado"];
+                    $assunto = @$_POST["assunto"];
+                    $mensagem = @$_POST["mensagem"];
+                    if (empty($email)) {
+                        echo "Email não pode ser vazio";
+                    } 
+                    elseif (isset($_POST["email"])) {
+                        $email = new EnviaContato();
+                        $email->enviaContato( $nome,$email, $cidade, $estado, $assunto, $mensagem);
+                         }
+                    ?>
             </div>
         </div>
     </div>
