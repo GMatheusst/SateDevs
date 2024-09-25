@@ -312,6 +312,35 @@ elseif (@$_POST["idForm"] == "atNot") {
 
   }
 }
+elseif (@$_POST["idForm"] == "atPerfil") {
+  if (empty($_POST["nomeUsuario"]) || empty($_POST["emailUsuario"]) || empty($_POST["senhaUsuario"]) || empty($_POST["ProfissaoUsuario"])) {
+    echo "
+    <script>
+    alert('Por favor, preencha todos os campos.');
+    window.location.href = '../tela/?tela=perfilUser';
+    </script>
+    ";
+  } 
+
+  else {
+    $id = @$_POST["id"];
+    $nomeUsuario = @$_POST["nomeUsuario"];
+    $emailUsuario = @$_POST["emailUsuario"];
+    $senhaUsuario = @$_POST["senhaUsuario"];
+    $profissaoUsuario = @$_POST["ProfissaoUsuario"];
+    $atualizar->acessarTabela("tbusuario");
+    $atualizar->acessarCampo("nomeUsuario='$nomeUsuario',emailUsuario='$emailUsuario',senhaUsuario='$senhaUsuario',ProfissaoUsuario='$profissaoUsuario'");
+    $atualizar->acessarCampoId("idUsuario");
+    $atualizar->acessarValorId($id);
+    $atualizar->atualizarDados();
+    echo "
+    <script>
+    alert('Atualizado com sucesso.');
+    window.location.href = '../tela/?tela=perfilUser';
+    </script>
+    ";
+  }
+}
 else{
   echo"ERRO FORA DOS FORMULARIOS";
 }

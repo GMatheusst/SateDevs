@@ -210,7 +210,7 @@ elseif($_POST["idForm"] == "CadFoto"){
       echo "
     <script>
     alert('Cadastro realizado com sucesso.');
-    window.location.href = '../tela/index.php';
+    window.location.href = '../tela/?tela=perfilUser';
     </script>
     ";
 }
