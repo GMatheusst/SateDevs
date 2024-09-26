@@ -321,8 +321,7 @@ elseif (@$_POST["idForm"] == "atPerfil") {
     </script>
     ";
   } 
-
-  else {
+  elseif($_POST["nomeUsuario" != $_SESSION["nome"]] || $_POST["senhaUsuario"] != $_SESSION["senha"]){
     $id = @$_POST["id"];
     $nomeUsuario = @$_POST["nomeUsuario"];
     $emailUsuario = @$_POST["emailUsuario"];
@@ -330,6 +329,25 @@ elseif (@$_POST["idForm"] == "atPerfil") {
     $profissaoUsuario = @$_POST["ProfissaoUsuario"];
     $atualizar->acessarTabela("tbusuario");
     $atualizar->acessarCampo("nomeUsuario='$nomeUsuario',emailUsuario='$emailUsuario',senhaUsuario='$senhaUsuario',ProfissaoUsuario='$profissaoUsuario'");
+    $atualizar->acessarCampoId("idUsuario");
+    $atualizar->acessarValorId($id);
+    $atualizar->atualizarDados();
+
+    echo "
+    <script>
+    alert('Sessão expirada, por favor, entre novamente.');
+    window.location.href =  '/SateDevs/admin/index.php';
+    </script>
+    ";
+  }
+  else {
+    $id = @$_POST["id"];
+    $nomeUsuario = @$_POST["nomeUsuario"];
+    $emailUsuario = @$_POST["emailUsuario"];
+    $senhaUsuario = @$_POST["senhaUsuario"];
+    $profissaoUsuario = @$_POST["ProfissaoUsuario"];
+    $atualizar->acessarTabela("tbusuario");
+    $atualizar->acessarCampo("emailUsuario='$emailUsuario',ProfissaoUsuario='$profissaoUsuario'");
     $atualizar->acessarCampoId("idUsuario");
     $atualizar->acessarValorId($id);
     $atualizar->atualizarDados();

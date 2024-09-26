@@ -56,7 +56,12 @@ if(isset($_SESSION['usuario']) and isset($_SESSION['senha']) and isset($_SESSION
  }else{
     unset($_SESSION["usuario"]);
     unset($_SESSION["senha"]);	
-    unset($_SESSION["nome"]);	
-     header("Location: /controleEstoque/admin/index.php");
+    unset($_SESSION["nome"]);	    	
+    echo "
+    <script>
+    alert('Sessão expirada, por favor, entre novamente.');
+    window.location.href = '/SateDevs/admin/index.php';
+    </script>
+    ";
      }
 ?>
