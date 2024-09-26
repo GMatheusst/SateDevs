@@ -14,7 +14,7 @@ if($_POST["idForm"] == "CRProd"){
   else {
     $nome = @$_POST["nome"];
     $desc = @$_POST["desc"];
-    $img = @$_POST["imagem"];
+    $img = @$_POST["idImagem"];
     $quant = @$_POST["quant"];
     $preço = @$_POST["preço"];
     $idc = @$_POST["categoria"];
@@ -25,12 +25,8 @@ if($_POST["idForm"] == "CRProd"){
     $insert->acessarCampoId("nomeProduto");
     $insert->acessarValorId('$nome');
     $insert->inserirDados();
-    echo "
-    <script>
-    alert('Cadastro realizado com sucesso.');
-    window.location.href = '../tela/?tela=cadListarProduto';
-    </script>
-    ";
+    echo "<script>alert('Cadastro realizado com sucesso.');window.location.href = '../tela/?tela=cadListarProduto';</script>";
+
   }
 }
 elseif($_POST["idForm"] == "CRImg") {
@@ -58,7 +54,12 @@ elseif($_POST["idForm"] == "CRImg") {
         $insert->acessarCampoId("nomeImagem");
         $insert->acessarValorId("$nome");
         $insert->inserirDados();
-       
+       echo "
+          <script>
+          alert('Cadastro realizado com sucesso.');
+          window.location.href = '../tela/?tela=cadListarFoto';
+          </script>
+          ";
       }
   }
 elseif($_POST["idForm"] == "CRCat"){

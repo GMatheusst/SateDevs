@@ -40,9 +40,7 @@ body{
 .nav1 a:hover{
   font-weight: bold;
 }
-.bg-danger{
-  background-color: #008B8B !important;
-}
+
 .image-div{
   position: relative;
 }

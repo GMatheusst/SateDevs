@@ -22,7 +22,7 @@
 
         /* Estilo do navbar */
         .navbar-custom {
-            background-color: #0d6efd;
+            background-color: #0d6efd !important;
             /* Azul mais forte */
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -33,14 +33,14 @@
         }
 
         .nav-item:hover {
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(255, 255, 255, 0.1) !important;
         }
 
         /* Dropdown menus */
         .dropdown-menu {
-            background-color: #f8f9fa;
+            background-color: #f8f9fa !important;
             /* Fundo leve */
-            border-radius: 8px;
+           
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -97,7 +97,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto background">
                     <li class="nav-item">
                         <a class="nav-link active" href="?sessao=home"><i class="bi bi-house-door-fill me-2"></i>Home</a>
                     </li>
@@ -142,12 +142,16 @@
                     <li class="nav-item"><a class="nav-link" href="?sessao=contato"><i
                                 class="bi bi-envelope me-2"></i>Contato</a></li>
                 </ul>
-                 <div class="col-md-2 mt-2">
+                 <div class="col-md-2 mt-2 me-2">
                     <div class="d-grid gap-2">
-                        <a href="admin/index.php" class="btn btn-custom "><i class="bi bi-person-circle"></i>
+                        <a href="admin/index.php" class="btn btn-custom "><i class="bi bi-person-circle "></i>
                             Login</a>
                     </div>
             </div>
+            <div class="col-md-2 mt-2">
+                <div class="d-grid gap-2">
+                   <?php include_once("include/pesquisa.php");?>
+                </div>
         </div>
     </nav>
 

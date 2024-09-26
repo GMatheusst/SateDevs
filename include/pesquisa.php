@@ -1,5 +1,4 @@
-<div class="px-5 ">
-    <form action="" method="post">
+    <form action="?sessao=resultadoPesquisa" method="post">
         <div class="d-flex">
             <div class="align-content-around">
                 <input type="search" name="pesquisa" id="" placeholder="Pesquisar" class="input bg-info-subtle">
@@ -10,4 +9,3 @@
             </div>
         </div>
     </form>
-</div>
