@@ -11,6 +11,11 @@ if(isset($_SESSION['usuario']) and isset($_SESSION['senha'])){
     unset($_SESSION['usuario']);
     unset($_SESSION['senha']);
     unset($_SESSION['nome']);
-    header('Location: /controleEstoque/admin/index.php');
+    echo "
+    <script>
+    alert('Saiu..');
+    window.location.href = '/SateDevs/admin/index.php';
+    </script>
+    ";
 }
 ?>

@@ -66,4 +66,12 @@ class VerificarLogin extends Minhaconexao
         echo "Erro: ".$e->getMessage();
      }   
     }
+    public function getUser(){
+     $nome = $_SESSION["nome"];
+     $sql = "SELECT * FROM tbusuario WHERE nomeUsuario = '$nome'";
+     $query = self::execSql($sql);
+     $dados = self::listarDados($query);
+     return $dados;
+    }
+    
 }

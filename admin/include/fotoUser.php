@@ -14,37 +14,7 @@ public function getFotoUsuario(){
 }
     else{           
         echo " 
-        <div class='row justify-content-center py-3'>
-            <div class='col-8'>
-        <button type='button' class='btn btn-outline-primary ' data-bs-toggle='modal' data-bs-target='#staticBackdrop'>
-                    Adicionar Foto do Usuário
-                </button>
-            </div>
-        </div>
-                <!-- Modal -->
-                <div class='modal fade' id='staticBackdrop' data-bs-backdrop='static' data-bs-keyboard='false'
-                    tabindex='-1' aria-labelledby='staticBackdropLabel' aria-hidden='true'>
-                    <div class='modal-dialog'>
-                        <div class='modal-content'>
-                            <div class='modal-header border-0'>
-                                <h1 class='modal-title fs-5' id='staticBackdropLabel'>Adicionar Foto do Usuário</h1>
-                                <button type='button' class='btn-close' data-bs-dismiss='modal'
-                                    aria-label='Close'></button>
-                            </div>
-                            <form action='../funcao/Inserir.php' method='post' enctype='multipart/form-data'>
-                                     <input type='hidden' name='idForm' value='CadFoto'>
-                                     <input type='hidden' name='id' value='".$dados["idUsuario"]."'>
-                                     <div class='input text-start border-0 px-1 py-1 mb-1'>
-                                     <label for='nome' class='lead fs-6'>Foto do Usuário</label>
-                                    <input type='file' name='imagem' id='' class='input border-0 border-bottom'>
-                                    </div>
-                                <div class='modal-footer border-0'>
-                                    <button type='submit' class='btn btn-sm btn-info'>Adicionar</button> 
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>";
+       ";
     }
 }
 public function getProfissaoUsuario(){
