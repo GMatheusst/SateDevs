@@ -5,10 +5,16 @@
  *******************************************************************/
 include_once("../classe/ManipularDados.php");
 $atualizar = new ManipularDados();
+session_start(); // Inicia a sessão
+
+// Agora você pode acessar as variáveis de sessão
+$usuario = $_SESSION['usuario'];
+$senha = $_SESSION['senha'];
+$nome = $_SESSION['nome'];
 
 /***************************************
-* Função para apagar cadastro de categoria
-*/
+ * Função para apagar cadastro de categoria
+ */
 if(@$_POST["idForm"] == "atP"){
   if (empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["quantidade"]) || empty($_POST["valor"]) || empty($_POST["Cat"]) || empty($_POST["SubCat"]) || empty($_POST["imagem"])) {
     echo "
@@ -321,14 +327,14 @@ elseif (@$_POST["idForm"] == "atPerfil") {
     </script>
     ";
   } 
-  elseif($_POST["nomeUsuario" != $_SESSION["nome"]] || $_POST["senhaUsuario"] != $_SESSION["senha"]){
+  elseif($_POST["nomeUsuario"] != $_SESSION["nome"] || $_POST["senhaUsuario"] != $_SESSION["senha"]){
     $id = @$_POST["id"];
     $nomeUsuario = @$_POST["nomeUsuario"];
     $emailUsuario = @$_POST["emailUsuario"];
     $senhaUsuario = @$_POST["senhaUsuario"];
     $profissaoUsuario = @$_POST["ProfissaoUsuario"];
     $atualizar->acessarTabela("tbusuario");
-    $atualizar->acessarCampo("nomeUsuario='$nomeUsuario',emailUsuario='$emailUsuario',senhaUsuario='$senhaUsuario',ProfissaoUsuario='$profissaoUsuario'");
+    $atualizar->acessarCampo("nomeUsuario='$nomeUsuario',emailUsuario='$emailUsuario',senhaUsuario='$senhaUsuario',profissaoUsuario='$profissaoUsuario'");
     $atualizar->acessarCampoId("idUsuario");
     $atualizar->acessarValorId($id);
     $atualizar->atualizarDados();
@@ -347,7 +353,7 @@ elseif (@$_POST["idForm"] == "atPerfil") {
     $senhaUsuario = @$_POST["senhaUsuario"];
     $profissaoUsuario = @$_POST["ProfissaoUsuario"];
     $atualizar->acessarTabela("tbusuario");
-    $atualizar->acessarCampo("emailUsuario='$emailUsuario',ProfissaoUsuario='$profissaoUsuario'");
+    $atualizar->acessarCampo("emailUsuario='$emailUsuario',profissaoUsuario='$profissaoUsuario'");
     $atualizar->acessarCampoId("idUsuario");
     $atualizar->acessarValorId($id);
     $atualizar->atualizarDados();

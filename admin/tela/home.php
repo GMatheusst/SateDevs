@@ -1,7 +1,7 @@
 <?php
  include_once("../classe/TotalItens.php");?>
 <section class="mt-2">
-    <div class="container">
+    <div class="container-profile">
         <div class="row">
             <div class="col">
                 <h3 class="mb-3 font-monospace">Relatório do Sistema</h3>

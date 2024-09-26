@@ -7,23 +7,26 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
-      background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+      background: linear-gradient(135deg, #74ebd5, #acb6e5);
       height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
     }
+
     .login-card {
-      background-color: white;
-      border-radius: 10px;
-      padding: 30px;
-      width: 450px;
-      height: 320px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      background-color: #fff;
+      border-radius: 15px;
+      padding: 40px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
       text-align: center;
       position: relative;
     }
+
     .login-card svg {
       width: 80px;
       height: 80px;
@@ -35,41 +38,66 @@
       top: -40px;
       left: calc(50% - 40px);
     }
+
     .login-card input {
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       height: 45px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
+      border-radius: 8px;
+      border: 1px solid #ddd;
       padding: 10px;
       font-size: 16px;
+      transition: border 0.3s;
     }
+
+    .login-card input:focus {
+      border-color: #0d6efd;
+      outline: none;
+      box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.25);
+    }
+
     .login-card button {
       height: 45px;
-      border-radius: 5px;
+      border-radius: 8px;
       background-color: #0d6efd;
       color: white;
       border: none;
       font-size: 16px;
       cursor: pointer;
+      transition: background-color 0.3s;
     }
-    .login-card .form-check-label {
-      font-size: 14px;
+
+    .login-card button:hover {
+      background-color: #084298;
     }
+
     .login-card .forgot-password {
       font-size: 14px;
       color: #6c757d;
       text-decoration: none;
+      margin-bottom: 10px;
+      display: inline-block;
     }
+
     .login-card .forgot-password:hover {
       text-decoration: underline;
     }
-    .login-card .remember-me {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+
     .login-card .alert {
       margin-top: 20px;
+    }
+
+    @media (max-width: 576px) {
+      .login-card {
+        padding: 20px;
+      }
+
+      .login-card input {
+        font-size: 14px;
+      }
+
+      .login-card button {
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -86,15 +114,15 @@
       <input type="hidden" name="nome">
 
       <div class="mb-3">
-        <input type="text" class="form-control" name="usuario" placeholder="User Name" required>
+        <input type="text" class="form-control" name="usuario" placeholder="User Name" autocomplete="off"  required>
       </div>
       
       <div class="mb-3">
-        <input type="email" class="form-control" name="email" placeholder="Email" required>
+        <input type="email" class="form-control" name="email" placeholder="Email" autocomplete="off" required>
       </div>
 
       <div class="mb-3">
-        <input type="password" class="form-control" name="senha" placeholder="Password" required>
+        <input type="password" class="form-control" name="senha" placeholder="Password" autocomplete="new-password" required>
       </div>
 
       <div class="d-grid mt-4">

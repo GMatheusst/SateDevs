@@ -17,13 +17,13 @@ public function getFotoUsuario(){
        ";
     }
 }
-public function getProfissaoUsuario(){
+public function getprofissaoUsuario(){
         $user = $_SESSION["usuario"];
         $sql = "SELECT * FROM tbusuario WHERE nomeUsuario = '$user'";
         $query = self::execSql($sql);
         $dados = self::listarDados($query);
-        if ($dados["ProfissaoUsuario"] != null) {
-        echo $dados["ProfissaoUsuario"];
+        if ($dados["profissaoUsuario"] != null) {
+        echo $dados["profissaoUsuario"];
     }
     else{
             echo "";
@@ -42,6 +42,6 @@ public function getProfissaoUsuario(){
     <div class="d-none d-md-block text-center lead text-light fs-4">
     <?php
     $profissao = new Usuario();
-    $profissao->getProfissaoUsuario();
+    $profissao->getprofissaoUsuario();
     ?></div>
 </div>

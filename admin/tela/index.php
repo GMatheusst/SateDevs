@@ -6,10 +6,12 @@ include_once("../classe/TrocarUrl.php");
 
 $login = new VerificarLogin();
 if(isset($_SESSION['usuario']) and isset($_SESSION['senha']) and isset($_SESSION['nome'])){
-	$_SESSION['usuario'];
+	
+    
+    $_SESSION['usuario'];
 	$_SESSION['senha'];
     $nome = $_SESSION['nome'];
-    
+   
 ?>
 <!doctype html>
 <html lang="pt-br">
