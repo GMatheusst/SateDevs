@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `tbevento` (
   `dataFimEvento` date NOT NULL,
   `horaInicioEvento` time NOT NULL,
   `horaFimEvento` time NOT NULL DEFAULT '00:00:00',
-  `situacaoImagem` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
+  `situacaoEvento` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
   PRIMARY KEY (`idEvento`)
 ) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
@@ -131,7 +131,7 @@ CREATE TABLE IF NOT EXISTS `tbnotificacao` (
     `idNotificacao` int NOT NULL AUTO_INCREMENT,
     `idUsuario` int DEFAULT '0',
 		`nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-		`mensagemNotificacao` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+		`mensagemNotificacao` char(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
     PRIMARY KEY (`idNotificacao`)
   ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
