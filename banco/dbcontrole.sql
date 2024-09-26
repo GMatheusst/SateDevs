@@ -1,4 +1,4 @@
--- --------------------------------------------------------
+----------------------------------------------------------
 -- Servidor:                     localhost
 -- Versão do servidor:           8.0.37 - MySQL Community Server - GPL
 -- OS do Servidor:               Win64
