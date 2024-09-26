@@ -10,16 +10,18 @@ if($_POST["idForm"] == "CRProd"){
     window.location.href = '../tela/?tela=cadListarProduto';
     </script>
     ";
-  } else {
+  } 
+  else {
     $nome = @$_POST["nome"];
     $desc = @$_POST["desc"];
+    $img = @$_POST["imagem"];
     $quant = @$_POST["quant"];
     $preço = @$_POST["preço"];
     $idc = @$_POST["categoria"];
     $idsc = @$_POST["sub"];
     $insert->acessarTabela("tbproduto");
-    $insert->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto");
-    $insert->acessarDados("'$nome','$desc','$quant','$preço'");
+    $insert->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto,idImagem");
+    $insert->acessarDados("'$nome','$desc','$quant','$preço','$img'");
     $insert->acessarCampoId("nomeProduto");
     $insert->acessarValorId('$nome');
     $insert->inserirDados();
@@ -56,12 +58,7 @@ elseif($_POST["idForm"] == "CRImg") {
         $insert->acessarCampoId("nomeImagem");
         $insert->acessarValorId("$nome");
         $insert->inserirDados();
-       echo "
-          <script>
-          alert('Cadastro realizado com sucesso.');
-          window.location.href = '../tela/?tela=cadListarFoto';
-          </script>
-          ";
+       
       }
   }
 elseif($_POST["idForm"] == "CRCat"){
@@ -156,7 +153,7 @@ elseif ($_POST["idForm"] == "CRContato") {
     $estado = @$_POST["estado"];
     $assunto = @$_POST["assunto"];
     $mensagem = @$_POST["mensagem"];
-    $insert->acessarTabela("tbontato");
+    $insert->acessarTabela("tbcontato");
     $insert->acessarCampo("nomeContato,emailContato,cidadeContato,estadoContato,assuntoContato,mensagemContato");
     $insert->acessarDados("'$nome','$email','$cidade','$estado','$assunto','$mensagem'");
     $insert->acessarCampoId("nomeContato");

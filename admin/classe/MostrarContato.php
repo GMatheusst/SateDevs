@@ -25,7 +25,7 @@ class MostrarContato extends CriaPaginacao
     }
     public function mostrarContato()
     {
-        $sql = "SELECT * FROM tbontato ORDER BY idContato DESC";
+        $sql = "SELECT * FROM tbcontato ORDER BY idContato DESC";
         $query = self::execSql($sql);
         $totalItens = self::contarDados($query);
         $this->setParametro($this->strNumPagina); //Número de página atual

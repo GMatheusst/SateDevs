@@ -42,7 +42,7 @@
 
                     <div class='mb-3'>
                         <label for='imagem' class='form-label lead'>Selecione a Foto</label>
-                        <input type='file' name='imagem' id='imagem' class='form-control'>
+                        <input type='file' name='imagem' id='imagem' class='input-file form-control'>
                     </div>
 
                     <div class='modal-footer border-0'>

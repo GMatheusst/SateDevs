@@ -1,4 +1,4 @@
-----------------------------------------------------------
+-- --------------------------------------------------------
 -- Servidor:                     localhost
 -- Versão do servidor:           8.0.37 - MySQL Community Server - GPL
 -- OS do Servidor:               Win64
@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `tbcategoria` (
   `descCategoria` char(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `situacaoCategoria` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
   PRIMARY KEY (`idCategoria`)
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Exportação de dados foi desmarcado.
 
@@ -41,18 +41,18 @@ CREATE TABLE IF NOT EXISTS `tbevento` (
   `horaFimEvento` time NOT NULL DEFAULT '00:00:00',
   `situacaoEvento` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
   PRIMARY KEY (`idEvento`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela dbcontrole.tbimagem
 CREATE TABLE IF NOT EXISTS `tbimagem` (
   `idImagem` int NOT NULL AUTO_INCREMENT,
-  `nomeImagem` char(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `pastaImagem` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `nomeImagem` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `pastaImagem` char(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `situacaoImagem` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
   PRIMARY KEY (`idImagem`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Exportação de dados foi desmarcado.
 
@@ -66,8 +66,8 @@ CREATE TABLE IF NOT EXISTS `tbnewsletter` (
 
 -- Exportação de dados foi desmarcado.
 
--- Copiando estrutura para tabela dbcontrole.tbontato
-CREATE TABLE IF NOT EXISTS `tbontato` (
+-- Copiando estrutura para tabela dbcontrole.tbcontato
+CREATE TABLE IF NOT EXISTS `tbcontato` (
   `idContato` int NOT NULL AUTO_INCREMENT,
   `nomeContato` char(50) DEFAULT NULL,
   `emailContato` char(50) DEFAULT NULL,
@@ -95,7 +95,7 @@ CREATE TABLE IF NOT EXISTS `tbproduto` (
   `idSubCategoria` int DEFAULT '0',
   `destaqueProduto` char(3) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT 'NÃO',
   PRIMARY KEY (`idProduto`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Exportação de dados foi desmarcado.
 
@@ -106,34 +106,33 @@ CREATE TABLE IF NOT EXISTS `tbsubcategoria` (
   `descSubCategoria` varchar(300) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT '0',
   `situacaoSubCategoria` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
   PRIMARY KEY (`idSubCategoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Exportação de dados foi desmarcado.
 
 -- Copiando estrutura para tabela dbcontrole.tbusuario
 CREATE TABLE IF NOT EXISTS `tbusuario` (
-    `idUsuario` int NOT NULL AUTO_INCREMENT,
-    `nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-    `senhaUsuario` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-		`access_level` tinyint NOT NULL DEFAULT '1',
-    `profissaoUsuario` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-    `emailUsuario` char(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-    `fotoUsuario` char(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-    `pastaFotoUsuario` char(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-    `situacaoUsuario` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
-    PRIMARY KEY (`idUsuario`)
-  ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+  `idUsuario` int NOT NULL AUTO_INCREMENT,
+  `nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `profissaoUsuario` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+	`senhaUsuario` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `emailUsuario` char(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `fotoUsuario` char(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `pastaFotoUsuario` char(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `situacaoUsuario` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL DEFAULT 'ATIVO',
+  PRIMARY KEY (`idUsuario`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
--- Exportação de dados foi desmarcado.
+-- Exportação de dados foi desmarcado
 
--- Copiando estrutura para tabela dbcontrole.tbusuario
-CREATE TABLE IF NOT EXISTS `tbnotificacao` (
-    `idNotificacao` int NOT NULL AUTO_INCREMENT,
-    `idUsuario` int DEFAULT '0',
-		`nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-		`mensagemNotificacao` char(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-    PRIMARY KEY (`idNotificacao`)
-  ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+-- Copiando estrutura para tabela dbcontrole.tbnotificacao
+CREATE TABLE IF NOT EXISTS `tbnotificacao`
+(
+  `idNotificacao` int(11) NOT NULL,
+  `idUsuario` int(11) NOT NULL,
+  `nomeUsuario` char(100) NOT NULL,
+  `mensagemNotificacao` char(50) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci COMMENT='Tabela para notificação';
 
 -- Exportação de dados foi desmarcado.
 

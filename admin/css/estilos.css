@@ -81,7 +81,7 @@ body {
   object-fit: cover;
 }
 
-input[type="file"] {
+.input-file {
   display: none;
 }
 

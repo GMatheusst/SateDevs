@@ -137,7 +137,7 @@
                         <h6 class="mb-2 text-success fw-bold fs-2 text-center">
                             <?php
                              $totalItens = new TotalItens();
-                            $totalItens->TotalItens("tbontato");
+                            $totalItens->TotalItens("tbcontato");
                             echo $totalItens->getTotalItens();
                             ?>
                         </h6>

@@ -41,7 +41,12 @@
                                         <label for="nome" class="lead fs-6">Valor Unitário</label>
                                         <input type="text" name="preço" id="" class="input border-0 border-bottom">
                                     </div>
-                                    
+                                <?php
+                                
+                                include_once("../funcao/ListarImagem.php");
+                                $imagem = new ListarImagem();
+                                $imagem->ListarImagem();
+                                ?>                                    
                                 </div>
                                 
                                 <div class="modal-footer border-0">

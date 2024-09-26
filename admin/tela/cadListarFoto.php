@@ -30,7 +30,7 @@
                                         <input type="text" name="nome" id="" class="input border-0 border-bottom">
                                     </div>
                                     <div class="text-start">
-                                        <label for="nome" class="lead fs-6">Imagem</label>
+                                        <label for="imagem" class="lead fs-6">Imagem</label>
                                         <input type="file" name="imagem" id="" class="input border-0 border-bottom">
                                     </div>
                                     
