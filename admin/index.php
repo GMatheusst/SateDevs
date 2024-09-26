@@ -18,7 +18,8 @@
       background-color: white;
       border-radius: 10px;
       padding: 30px;
-      width: 350px;
+      width: 450px;
+      height: 320px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       text-align: center;
       position: relative;
@@ -97,7 +98,7 @@
         <a href="cadastro.php" class="forgot-password">Não possuir conta? Cadastre-se!!</a>
       </div>
 
-      <div class="d-grid mt-4">
+      <div class="d-grid mt-5">
         <button type="submit" name="enviar" class="btn">Login</button>
       </div>
 

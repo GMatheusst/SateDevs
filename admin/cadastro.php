@@ -18,7 +18,8 @@
       background-color: white;
       border-radius: 10px;
       padding: 30px;
-      width: 350px;
+      width: 450px;
+      height: 320px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
       text-align: center;
       position: relative;
@@ -85,7 +86,7 @@
       <input type="hidden" name="nome">
 
       <div class="mb-3">
-        <input type="text" class="form-control" name="usuario" placeholder="Email ID" required>
+        <input type="text" class="form-control" name="usuario" placeholder="User Name" required>
       </div>
       
       <div class="mb-3">
