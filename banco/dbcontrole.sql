@@ -116,6 +116,7 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
   `nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `profissaoUsuario` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
 	`senhaUsuario` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+	`access_level` tinyint NOT NULL DEFAULT '0',
   `emailUsuario` char(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `fotoUsuario` char(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `pastaFotoUsuario` char(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
@@ -131,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `tbnotificacao`
   `idNotificacao` int(11) NOT NULL,
   `idUsuario` int(11) NOT NULL,
   `nomeUsuario` char(100) NOT NULL,
-  `mensagemNotificacao` char(50) NOT NULL
+  `mensagemNotificacao` char(200) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci COMMENT='Tabela para notificação';
 
 -- Exportação de dados foi desmarcado.
@@ -141,3 +142,12 @@ CREATE TABLE IF NOT EXISTS `tbnotificacao`
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
+
+
+
+
+
+
+
+
+
