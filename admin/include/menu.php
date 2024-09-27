@@ -67,13 +67,12 @@ $user = $user->getUser();
             href="?tela=relatorioContato"><i class="bi bi-person-rolodex"></i> Contato</a>
     </li>
     <!-- Intens para administrador -->
-     <?php if($user["idUsuario"] == 2){
+     <?php if($user["access_level"] > 1){
         echo"<div class='d-none d-md-inline-block text-start my-2 text-light fs-5 text-center lead'>Administrador</div>
     <li class='nav-item bg-secondary py-2 ps-2 mb-1'>
-        <a class='col-sm-2 d-md-none link-light link-opacity-75-hover' href='?tela=relatorioNewsLetter'><i
-                class='bi bi-newspaper'></i></a>
+        
         <a class='d-none d-md-inline-block link-underline link-underline-opacity-0 link-light link-opacity-75-hover'
-            href='?tela=relatorioNewsLetter'><i class='bi bi-newspaper'></i> Usuários</a>
+            href='?tela=cadListarUsuario'><i class='bi bi-newspaper'></i> Usuários</a>
     </li>
     <li class='nav-item bg-secondary py-2 ps-2 mb-1'>
         <a class='col-sm-2 d-md-none link-light link-opacity-75-hover' href='?tela=relatorioContato'><i

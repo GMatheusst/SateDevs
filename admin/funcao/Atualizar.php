@@ -151,30 +151,25 @@ if(empty($_POST["nome"]) || empty($_POST["desc"]) ){
   }
 } 
 elseif (@$_POST["idForm"] == "apUsr") {
-if(empty($_POST["nome"]) || empty($_POST["senha"])){
-    echo "
+if (empty($_POST["nome"]) || empty($_POST["senha"]) || empty($_POST["email"])){
+  echo "
     <script>
     alert('Por favor, preencha todos os campos.');
-    window.location.href = '../tela/?tela=cadListarUsuario';
+    window.location.href = '../tela/?tela=cadListarContato';
     </script>
     ";
-  }
-  else{
-    $nome = @$_POST["nome"];
-    $senha = @$_POST["senha"];
-    $id = @$_POST["id"];
-    $atualizar->acessarTabela("tbusuario");
-    $atualizar->acessarCampo("nomeUsuario='$nome',senhaUsuario='$senha'");
-    $atualizar->acessarCampoId("idUsuario");
-    $atualizar->acessarValorId($id);
-    $atualizar->atualizarDados();
-    echo "
-    <script>
-    alert('Por favor, preencha todos os campos.');
-    window.location.href = '../tela/?tela=cadListarUsuario';
-    </script>
-    ";
-  }
+    }
+    else{
+      $id = @$_POST["id"];
+      $nomeUsuario = @$_POST["nomeUsuario"];
+      $emailUsuario = @$_POST["emailUsuario"];
+      $senhaUsuario = @$_POST["senhaUsuario"];
+      $atualizar->acessarTabela("tbusuario");
+      $atualizar->acessarCampo("nomeUsuario='$nomeUsuario',emailUsuario='$emailUsuario',senhaUsuario='$senhaUsuario'");
+      $atualizar->acessarCampoId("idUsuario");
+      $atualizar->acessarValorId($id);
+      $atualizar->atualizarDados();
+    }
 } 
 elseif (@$_POST["idForm"] == "apContato") {
   if (empty($_POST["nome"]) || empty($_POST["email"]) || empty($_POST["cidade"]) || empty($_POST["estado"]) || empty($_POST["assunto"]) || empty($_POST["mensagem"])) {

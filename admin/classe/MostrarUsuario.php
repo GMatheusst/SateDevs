@@ -19,7 +19,7 @@ class MostrarUsuario extends CriaPaginacao{
         return $this->strNumPagina;
     }
     public function mostrarUsuario(){
-        $sql = "SELECT * FROM tbusuario,tbimagem WHERE tbusuario.idImagem = tbimagem.idImagem ORDER BY nomeUsuario ASC";
+        $sql = "SELECT * FROM tbusuario WHERE situacaoUsuario = 'ATIVO' ORDER BY nomeUsuario ASC";
         $query = self::execSql($sql);
         $totalItens = self::contarDados($query);
         $this->setParametro($this->strNumPagina); //Número de página atual
@@ -32,6 +32,7 @@ class MostrarUsuario extends CriaPaginacao{
         $cont = 0;
         for($i = 0; $i <= $totalItens; $i++){
             $cont ++;
+           
             if($dados = self::results($query)){
                 $contador++;
                 echo "
@@ -40,7 +41,7 @@ class MostrarUsuario extends CriaPaginacao{
                                 <td class='fw-lighter'>".$dados["nomeUsuario"]."</td>
                                 <td class='fw-lighter'>".$dados["senhaUsuario"]."</td>
                                 <td class='fw-lighter'>".$dados["emailUsuario"]."</td>
-                                <td class='fw-lighter'><img src='".$dados["urlImagem"]."' width='100px'></td>
+                                <td class='fw-lighter'><img src='".$dados["fotoUsuario"]."' width='100px' class='rounded-circle'></td>
                                 <td class='fw-lighter'>".$dados["situacaoUsuario"]."</td>
                                 <!-- Button update -->
                                 <td class='align-content-around'>
@@ -53,6 +54,10 @@ class MostrarUsuario extends CriaPaginacao{
                                     include('../tela/formApagarUsuario.php');
                                 echo "  
                                 </td>
+                                <td class='align-content-around'>"
+                                ;
+                                    include('../tela/adicionarAdm.php');
+                                    echo"
                             </tr>
                 ";
                 self::setContador($contador);

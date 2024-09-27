@@ -84,6 +84,19 @@ class ManipularDados extends MinhaConexao{
             }
         }
     }
+    public function inserirDadosForçados(){      
+            try {
+                $this->sql = "INSERT INTO $this->tabela ($this->campo) VALUES ($this->dados)";
+                if (self::execSql($this->sql)) {
+                    $this->status = "Cadastrado com sucesso.";
+                }
+            } catch (Exception $e) {
+                echo "<b><center>Função InserirDados</center></b>";
+                echo "<p><b>Erro de SQL: </b> ".$this->sql."</p>";
+                echo "<p><b>Erro ao inserir o dado. </b>" . $e->getMessage()."</p>";
+            }
+        
+    }
     /**Método que apaga dados no banco de dados 
      * Exemplo de uso:
      * $this->acessarTabela("tbnewsletter"); - nome da tabela que será pesquisada
