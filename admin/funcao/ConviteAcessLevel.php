@@ -12,10 +12,7 @@ $insert = new ManipularDados();
         
       
       } 
-            $texto = 'Você esta sendo convidado para se torna administrador
-                    <button type="button" class="btn btn-primary " data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
-                 Aceitar Convite
-                </button>';
+            $texto = 'Você esta sendo convidado para se torna administrador<button type="button" class="btn btn-primary" aria-controls="offcanvasRight">Aceitar Convite</button>';
             $id = @$_POST["id"];
             $userName = new ListarNomeUsuario();
             $nomeUsuario = $userName->ListarUsuario();
