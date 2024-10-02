@@ -17,11 +17,11 @@ if($_POST["idForm"] == "CRProd"){
     $img = @$_POST["idImagem"];
     $quant = @$_POST["quant"];
     $preço = @$_POST["preço"];
-    $idc = @$_POST["categoria"];
-    $idsc = @$_POST["sub"];
+    $idc = @$_POST["Cat"];
+    $idsc = @$_POST["SubCat"];
     $insert->acessarTabela("tbproduto");
-    $insert->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto,idImagem");
-    $insert->acessarDados("'$nome','$desc','$quant','$preço','$img'");
+    $insert->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto,idImagem,idCategoria,idSubCategoria");
+    $insert->acessarDados("'$nome','$desc','$quant','$preço','$img',$idc,$idsc");
     $insert->acessarCampoId("nomeProduto");
     $insert->acessarValorId('$nome');
     $insert->inserirDados();
