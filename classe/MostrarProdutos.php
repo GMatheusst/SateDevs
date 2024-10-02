@@ -25,7 +25,7 @@ class MostrarProdutos extends CriaPaginacao
     }
     public function mostrarProdutos($idc, $idsc)
     {
-        $sql = "SELECT * FROM tbproduto WHERE idCategoria = $idc AND idSubCategoria = $idsc ORDER BY nomeProduto ASC";
+        $sql = "SELECT * FROM tbproduto,tbimagem WHERE idCategoria = $idc AND idSubCategoria = $idsc AND tbproduto.idImagem = tbimagem.idImagem ORDER BY nomeProduto ASC";
         $query = self::execSql($sql);
         $totalItens = self::contarDados($query);
         $this->setParametro($this->strNumPagina); //Número de página atual
@@ -43,9 +43,9 @@ class MostrarProdutos extends CriaPaginacao
                 $contador++;
                 echo "
               <div class='col-4 mb-sm-0 mb-md-5 col-md-3 col-xl-3'>
-                                            <h5 class='lead text-dark fs-6 fw-medium'>" . $dados["nomeProduto"] . "</h5>
+                                            <h5 class='lead text-dark fs-5 fw-bol fw-bold fw-medium'>" . $dados["nomeProduto"] . "</h5>
                                             <div class='text-center'>
-                                                <img src='" . $dados["fotoProduto"] . "' class='img-fluid img-thumbnail' alt=''>
+                                                <img src='" . $dados["pastaImagem"] . "' class='img-fluid img-thumbnail' alt=''>
                                             </div>
                                             <div class='text-center mt-2'>
                                                 <!-- Button trigger modal -->
@@ -60,16 +60,16 @@ class MostrarProdutos extends CriaPaginacao
                                                     <div class='modal-dialog'>
                                                         <div class='modal-content'>
                                                             <div class='modal-header'>
-                                                                <button type='button' class='btn-close'
+                                                                <button type='button' class='btn-close btn-danger'
                                                                     data-bs-dismiss='modal' aria-label='Close'></button>
                                                             </div>
                                                             <div class='modal-body'>
-                                                                <img src='" . $dados["fotoProduto"] . " alt=''
+                                                                <img src='".$dados["pastaImagem"]."' width='200'alt=''
                                                                     class='img-fluid'>
                                                             </div>
                                                             <div class='modal-dialog'>
                                                                 <div>" . $dados["nomeProduto"] . "</div>
-                                                                <div>" . $dados["valorProduto"] . "</div>
+                                                                <div>Preço: R$" . $dados["valorProduto"] . ".00</div>
                                                             </div>
                                                             <div class='modal-footer'>
                                                                 <p>" . $dados["descProduto"] . "</p>

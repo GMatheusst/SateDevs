@@ -42,11 +42,20 @@
                                         <input type="text" name="preço" id="" class="input border-0 border-bottom">
                                     </div>
                                 <?php
-                                
                                 include_once("../funcao/ListarImagem.php");
                                 $imagem = new ListarImagem();
                                 $imagem->ListarImagem();
-                                ?>                                    
+                                ?>   
+                                 <?php
+                                include_once("../funcao/ListarCategorias.php");
+                                $Cateogirias = new ListarCategorias();
+                                $Cateogirias->ListarCategorias();
+                                ?>       
+                                    <?php
+                                    include_once("../funcao/ListarSubCategorias.php");
+                                    $imagem = new ListarSubCategorias();
+                                    $imagem->ListarSubCategorias();
+                                    ?>                     
                                 </div>
                                 
                                 <div class="modal-footer border-0">
@@ -73,6 +82,7 @@
                             <th class="">Descrição</th>
                             <th class="">Quantidade</th>
                             <th>Preço</th>
+                            <th class="px-3 py-2" style="width: 100px;"></th>
                             <th class="px-3 py-2" style="width: 30px;">
                     <i class="bi bi-pencil-square text-info" title="Editar"></i>
                     </th>

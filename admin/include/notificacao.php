@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <div class="col-2 bg-danger text-white vh-100">
     <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
         aria-controls="offcanvasRight">

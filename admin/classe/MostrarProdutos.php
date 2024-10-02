@@ -49,6 +49,7 @@ class MostrarProdutos extends CriaPaginacao
                             <td class='fw-lighter'>".$dados['descProduto']."</td>
                             <td class='fw-lighter'>".$dados['quantProduto']."</td>
                             <td class='fw-lighter'>R$".$dados['valorProduto']."</td>
+                            <td class='fw-lighter'><img src='" . $dados["pastaImagem"] . "' width='100px' class='rounded-circle'></td>
                             <td class='align-content-around'>";
                             include("../tela/formAtualizarProduto.php");
                             echo "</td>

@@ -16,7 +16,7 @@ $nome = $_SESSION['nome'];
  * Função para apagar cadastro de categoria
  */
 if(@$_POST["idForm"] == "atP"){
-  if (empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["quantidade"]) || empty($_POST["valor"]) || empty($_POST["Cat"]) || empty($_POST["SubCat"]) || empty($_POST["imagem"])) {
+  if (empty($_POST["produto"]) || empty($_POST["desc"]) || empty($_POST["quantidade"]) || empty($_POST["valor"]) || empty($_POST["Cat"]) || empty($_POST["SubCat"]) || empty($_POST["idImagem"])) {
     echo "
     <script>
     alert('Por favor, preencha todos os campos.');
@@ -24,6 +24,8 @@ if(@$_POST["idForm"] == "atP"){
     </script>
     ";
   } else {
+    var_dump($_POST["id"]);
+    $id = @$_POST["id"];
     $nome = @$_POST["nome"];
     $img = @$_POST["imagem"];
     $desc = @$_POST["desc"];
@@ -36,13 +38,7 @@ if(@$_POST["idForm"] == "atP"){
     $atualizar->acessarCampo("nomeProduto='$nome',descProduto='$desc',quantProduto='$quant',valorProduto='$preco',idCategoria='$cat',idSubCategoria='$subCat',idImagem='$imagem'");
     $atualizar->acessarCampoId("idProduto");
     $atualizar->acessarValorId($id);
-    $atualizar->atualizarDados();
-    echo "
-    <script>
-    alert('Por favor, preencha todos os campos.');
-    window.location.href = '../tela/?tela=cadListarProduto';
-    </script>
-    ";
+  
   }
         
 }

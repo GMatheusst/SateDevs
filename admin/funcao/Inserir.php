@@ -25,8 +25,12 @@ if($_POST["idForm"] == "CRProd"){
     $insert->acessarCampoId("nomeProduto");
     $insert->acessarValorId('$nome');
     $insert->inserirDados();
-    echo "<script>alert('Cadastro realizado com sucesso.');window.location.href = '../tela/?tela=cadListarProduto';</script>";
-
+    echo "
+          <script>
+          alert('Cadastro realizado com sucesso.');
+          window.location.href = '../tela/?tela=cadListarProduto';
+          </script>
+          ";
   }
 }
 elseif($_POST["idForm"] == "CRImg") {

@@ -34,11 +34,23 @@
                         <input type="text" name="valor" id="" value="<?php echo $dados['valorProduto']; ?>" class="input border-0 border-bottom">
                     </div>
 
-                        <?php include_once("../funcao/ListarCategorias.php"); ?>
-                       <?php include_once("../funcao/ListarSubCategorias.php"); ?>
-                    <div class="text-start border px-1 py-1 mb-1">
-                        <?php include_once("../funcao/ListarImagem.php");?>
-                    </div>
+                        <?php
+                        include_once("../funcao/ListarCategorias.php");
+                        $Cateogirias = new ListarCategorias();
+                        $Cateogirias->ListarCategorias();
+                        ?>
+                        <?php
+                        include_once("../funcao/ListarSubCategorias.php");
+                        $SubCategorias = new ListarSubCategorias();
+                        $SubCategorias->ListarSubCategorias();
+                        ?>
+                         <?php
+                                
+                                include_once("../funcao/ListarImagem.php");
+                                $imagem = new ListarImagem();
+                                $imagem->ListarImagem();
+                                ?>     
+                    
                 </div>
                 <div class="modal-footer border-0">
                     <button type="submit" class="btn btn-sm btn-info">Adicionar</button>

@@ -7,6 +7,11 @@
                      include_once("../classe/MostrarNotificacao.php");
                         $mostrar = new MostrarNotificacao();
                         $mostrar->mostrarNotificacaoUsuario();
-                        ?>
+                        
+                        
+                        include_once("../classe/VerificarLogin.php");
+                        $usuario = new VerificarLogin;
+                        $usuario->getUser();
+                         ?>
                  </div>
              </div>

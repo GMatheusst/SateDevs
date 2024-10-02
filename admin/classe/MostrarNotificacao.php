@@ -129,4 +129,15 @@ class MostrarNotificacao extends CriaPaginacao
         ";
         
     }
+    public function getNot(){
+        $nome = $_SESSION["nome"];
+        $sql = "SELECT * FROM tbusuario WHERE nomeUsuario =  '$nome' ";
+        $query = self::execSql($sql);
+        $dados = self::listarDados($query);
+        $id = $dados["idUsuario"];
+        $sql1 = "SELECT * FROM tbnotificacao,tbusuario WHERE tbnotificacao.nomeUsuario = tbusuario.nomeUsuario AND tbusuario.idUsuario = '$id' ORDER BY tbnotificacao.idNotificacao DESC LIMIT 10";
+        $query1 = self::execSql($sql1);
+        $dados = self::listarDados($query1);
+        return $dados;
+}
 }

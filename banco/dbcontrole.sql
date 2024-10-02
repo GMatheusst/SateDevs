@@ -116,7 +116,7 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
   `nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `profissaoUsuario` char(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
 	`senhaUsuario` char(10) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-	`access_level` tinyint NOT NULL DEFAULT '0',
+	`access_level` tinyint NOT NULL DEFAULT '1',
   `emailUsuario` char(60) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `fotoUsuario` char(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
   `pastaFotoUsuario` char(15) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
@@ -127,15 +127,16 @@ CREATE TABLE IF NOT EXISTS `tbusuario` (
 -- Exportação de dados foi desmarcado
 
 -- Copiando estrutura para tabela dbcontrole.tbnotificacao
-CREATE TABLE IF NOT EXISTS `tbnotificacao`
-(
-  `idNotificacao` int(11) NOT NULL,
-  `idUsuario` int(11) NOT NULL,
-  `nomeUsuario` char(100) NOT NULL,
-  `mensagemNotificacao` char(200) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci COMMENT='Tabela para notificação';
+CREATE TABLE IF NOT EXISTS `tbnotificacao`(
+  `idNotificacao` int NOT NULL AUTO_INCREMENT,
+  `idUsuario` int DEFAULT '0',
+  `nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `mensagemNotificacao` char(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+	PRIMARY KEY (`idNotificacao`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
 -- Exportação de dados foi desmarcado.
+
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
