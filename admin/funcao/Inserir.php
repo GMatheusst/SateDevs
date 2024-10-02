@@ -3,7 +3,7 @@
 include_once("../classe/ManipularDados.php");
 $insert = new ManipularDados();
 if($_POST["idForm"] == "CRProd"){
-  if(empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["quant"]) || empty($_POST["preço"])){
+  if(empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["quant"]) || empty($_POST["preço"]) || empty($_POST["Cat"]) || empty($_POST["SubCat"])){
     echo "
     <script>
     alert('Por favor, preencha todos os campos.');
