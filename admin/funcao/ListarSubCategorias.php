@@ -12,7 +12,8 @@ class ListarSubCategorias extends ManipularDados
     <div class='input text-start border px-1 py-1 mb-1'>
         <label for='situacao' class='lead fs-6'>SubCategoria</label>
         <select class='form-select' aria-label='Default select example' name='SubCat'>
-            <option>Selecione</option>
+           ";
+          echo " <option>Selecione</option>
     </div>
 
 ";

@@ -11,11 +11,11 @@ Class InserirDados extends ManipularDados{
 * $this->acessarDados("'valor'");
 * self::inserirDados();
 */
-public function CadastroDeUsuario($nome,$emai,$senha){
+public function CadastroDeUsuario($nome,$emai,$senha,$level){
     
     $this->acessarTabela("tbusuario");
-    $this->acessarCampo("nomeUsuario,emailUsuario,senhaUsuario");
-    $this->acessarDados("'$nome','$emai','$senha'");
+    $this->acessarCampo("nomeUsuario,emailUsuario,senhaUsuario,access_level");
+    $this->acessarDados("'$nome','$emai','$senha','$level'");
     $this->acessarCampoId("nomeUsuario");
     $this->acessarValorId("$nome");
     self::inserirDados();

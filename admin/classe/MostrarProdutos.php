@@ -38,27 +38,29 @@ class MostrarProdutos extends CriaPaginacao
         $contador = 0; //Contador para gerar o número de páginas
         $cont = 0;
         for ($i = 0; $i <= $totalItens; $i++) {
-           $cont++;
+            $i = $i + 1;
 
             if ($dados = self::results($query)) {
                 $contador++;
                 echo "
-                            <tr>
-                            <td class='fw-lighter'>" . $dados['idProduto'] . "</td>
-                            <td class='fw-lighter'>" . $dados['nomeProduto'] . "</td>
-                            <td class='fw-lighter'>".$dados['descProduto']."</td>
-                            <td class='fw-lighter'>".$dados['quantProduto']."</td>
-                            <td class='fw-lighter'>R$".$dados['valorProduto']."</td>
-                            <td class='fw-lighter'><img src='" . $dados["pastaImagem"] . "' width='100px' class='rounded-circle'></td>
-                            <td class='align-content-around'>";
-                            include("../tela/formAtualizarProduto.php");
-                            echo "</td>
-                            <td class='align-content-around'>";
-                        include("../tela/formApagarProduto.php");
-                            "</td>
-                        </tr>";
-            self::setContador($contador);
-        }
+                <tr>
+                <td class='fw-lighter'>" . $dados['idProduto'] . "</td>
+                <td class='fw-lighter'>" . $dados['nomeProduto'] . "</td>
+                <td class='fw-lighter'>".$dados['descProduto']."</td>
+                <td class='fw-lighter'>".$dados['quantProduto']."</td>
+                <td class='fw-lighter'>R$".$dados['valorProduto']."</td>
+                <td class='fw-lighter'><img src='".$dados["pastaImagem"]."' width='100px'></td>
+                <td class='align-content-around'>";
+                include("../tela/formAtualizarProduto.php");
+                echo "</td>
+                <td class='align-content-around'>";
+            include("../tela/formApagarProduto.php");
+                "</td>
+            </tr>";
+                self::setContador($contador);
+                $cont++;
+            }
+       
         }
     }
 }

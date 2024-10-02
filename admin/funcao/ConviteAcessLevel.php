@@ -2,9 +2,9 @@
 include_once("../classe/ManipularDados.php");
 $insert = new ManipularDados();
 
-           class ListarNomeUsuario extends ManipularDados{
+class ListarNomeUsuario extends ManipularDados{
         public function ListarUsuario(){
-          $sql = "SELECT * FROM tbusuario ORDER BY nomeUsuario ASC";
+          $sql = "SELECT * FROM tbusuario ORDER BY idUsuario ASC";
           $query = self::execSql($sql);
           $dados = self::listarDados($query);
          return $nomeUsuario = $dados["nomeUsuario"];
@@ -21,7 +21,7 @@ $insert = new ManipularDados();
             $usuario = new VerificarLogin;
             $dados = $usuario->getUser();
           
-            $texto = '<div class="card text-center shadow-sm p-1 mb-4 bg-white rounded">
+            $texto = ' <div class="card text-center shadow-sm p-1 mb-4 bg-white rounded">
     <div class="card-body">
         <h5 class="card-title">Convite para Administrador</h5>
         <p class="card-text">Você está sendo convidado para se tornar administrador.</p>
@@ -29,14 +29,14 @@ $insert = new ManipularDados();
         <div class="d-flex justify-content-center gap-3">
             <!-- Formulário para aceitar o convite -->
             <form action="../funcao/ConviteAcessLevel.php" method="post">
-                <input type="hidden" name="id" value="'.$dados['idUsuario'].'">
+                <input type="hidden" name="id" value="'.$dados["idUsuario"].'">
                 <input type="hidden" name="turno" value="aceitar">
                 <button type="submit" class="btn btn-outline-success">Aceitar</button>
             </form>
 
             <!-- Formulário para negar o convite -->
             <form action="../funcao/ConviteAcessLevel.php" method="post">
-                <input type="hidden" name="id" value="'.$dados['idUsuario'].'">
+                <input type="hidden" name="id" value="'.$dados["idUsuario"].'">
                 <input type="hidden" name="turno" value="negar">
                 <button type="submit" class="btn btn-outline-danger">Negar</button>
             </form>
@@ -52,6 +52,13 @@ $insert = new ManipularDados();
             $insert->acessarCampo("idUsuario,nomeUsuario,mensagemNotificacao");
             $insert->acessarDados("'$id','$nomeUsuario','$texto'");
             $insert->inserirDadosForçados();
+            echo "
+         <script>
+         alert('Notificação enviada');
+         window.location.href = '../tela/index.php';
+         </script>
+         ";
+
         } 
         elseif(@$_POST["turno"] == "aceitar"){
 
@@ -66,6 +73,7 @@ $insert = new ManipularDados();
           $dados = $mostrar->getNot();
 
           $id =  @$_POST["id"];
+          var_dump($id);
           $idNot = $dados["idNotificacao"];
           $adm = 2;
           $insert->acessarTabela("tbusuario");
@@ -73,13 +81,8 @@ $insert = new ManipularDados();
           $insert->acessarCampoId("idUsuario");
           $insert->acessarValorId($id);
           $insert->atualizarDados();
-
-          $insert->acessarTabela("tbnotificacao");
-          $insert->acessarCampo("idNotificacao");
-          $insert->acessarDados("$idNot");
-          $insert->acessarCampoId("idNotificacao");
-          $insert->acessarValorId("$idNot");
-          $insert->apagarDados();
+          
+        
           }
         elseif(@$_POST["turno"] === "negar"){
         session_start(); // Inicia a sessão

@@ -23,24 +23,29 @@ if(@$_POST["idForm"] == "atP"){
     window.location.href = '../tela/?tela=cadListarProduto';
     </script>
     ";
-  } else {
-    var_dump($_POST["id"]);
-    $id = @$_POST["id"];
-    $nome = @$_POST["nome"];
-    $img = @$_POST["imagem"];
-    $desc = @$_POST["desc"];
-    $quant = @$_POST["quantidade"];
-    $preco = @$_POST["valor"];
-    $cat = @$_POST["Cat"];
-    $subCat =  @$_POST["SubCat"];
-    $imagem = @$_POST["imagem"];
-    $atualizar->acessarTabela("tbproduto");
-    $atualizar->acessarCampo("nomeProduto='$nome',descProduto='$desc',quantProduto='$quant',valorProduto='$preco',idCategoria='$cat',idSubCategoria='$subCat',idImagem='$imagem'");
-    $atualizar->acessarCampoId("idProduto");
-    $atualizar->acessarValorId($id);
-  
-  }
-        
+  } 
+    else{
+      $id = @$_POST["id"];
+      $nome = @$_POST["produto"];
+      $img = @$_POST["imagem"];
+      $desc = @$_POST["desc"];
+      $quant = @$_POST["quantidade"];
+      $preco = @$_POST["valor"];
+      $cat = @$_POST["Cat"];
+      $subCat =  @$_POST["SubCat"];
+      $idImagem = @$_POST["idImagem"];
+      $atualizar->acessarTabela("tbproduto");
+      $atualizar->acessarCampo("nomeProduto='$nome',descProduto='$desc',quantProduto='$quant',valorProduto='$preco',idCategoria='$cat',idSubCategoria='$subCat',idImagem='$idImagem'");
+      $atualizar->acessarCampoId("idProduto");
+      $atualizar->acessarValorId($id);
+      $atualizar->atualizarDados();
+      echo "
+      <script>
+      alert('Atualizado com Sucesso');
+      window.location.href = '../tela/?tela=cadListarProduto';
+      </script>
+      ";
+    }
 }
 elseif(@$_POST["idForm"] == "atImg")
 {

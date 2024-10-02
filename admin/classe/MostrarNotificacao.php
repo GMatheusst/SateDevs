@@ -77,21 +77,22 @@ class MostrarNotificacao extends CriaPaginacao
     public function mostrarNotificacaoUsuario()
     {
         $nome = $_SESSION["nome"];
-        $sql = "SELECT * FROM tbusuario WHERE nomeUsuario =  '$nome' ";
+        $sql = "SELECT * FROM tbusuario WHERE nomeUsuario = '$nome' ";
         $query = self::execSql($sql);
         $dados = self::listarDados($query);
         $id = $dados["idUsuario"];
-        $sql = "SELECT * FROM tbnotificacao,tbusuario WHERE tbnotificacao.nomeUsuario = tbusuario.nomeUsuario AND tbusuario.idUsuario = '$id' ORDER BY tbnotificacao.idNotificacao DESC LIMIT 10";
+
+        $sqlNot = "SELECT * FROM tbnotificacao,tbusuario WHERE tbnotificacao.nomeUsuario = tbusuario.nomeUsuario AND tbusuario.idUsuario = '$id' ORDER BY tbnotificacao.idNotificacao DESC LIMIT 10";
        
-       
-        $query = self::execSql($sql);
+        $queryNot = self::execSql($sqlNot);
+       // var_dump($sqlNot);
         echo "
         <div class='col-10 text-end'>
             <button type='button' class='btn btn-primary position-relative' data-bs-toggle='offcanvas'
                 data-bs-target='#offcanvasRight' aria-controls='offcanvasRight'>
                 <i class='bi bi-bell fs-4'></i>
                 <span class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger shadow-sm'>
-                    " . self::contarDados($query) . "
+                    ".self::contarDados($queryNot)."
                     <span class='visually-hidden'>unread messages</span>
                 </span>
             </button>
@@ -103,24 +104,30 @@ class MostrarNotificacao extends CriaPaginacao
                 <div class='offcanvas-body p-0'>
                     <div class='list-group list-group-flush'>
         ";
-        
-        while ($dados = self::listarDados($query)) {
+        while ($dadosNot = self::listarDados($queryNot)) {
             echo "
                 <div class='list-group-item d-flex justify-content-between align-items-center bg-light-subtle py-3 px-4 border-0 border-bottom'>
                     <div class='d-flex align-items-center'>
-                        <div class='me-3'>
-                            <img src='" . $dados['fotoUsuario'] . "' alt='' class='img-fluid rounded-circle' height='50' width='50'>
-                        </div>
+                        ";
+                        if($dadosNot['fotoUsuario'] == null){
+                            echo"";
+                        }
+                        else{
+                            echo"
+                            <div class='me-3'>
+                            <img src='" . $dadosNot['fotoUsuario'] . "' alt='' class='img-fluid rounded-circle' height='50' width='50'>
+                            </div>";
+                        }
+                        echo"
                         <div>
-                            <h5 class='mb-1 fw-bold '>" . $dados['nomeUsuario'] . "</h5>
-                            <p class='mb-0 text-muted small'>" . $dados['mensagemNotificacao'] . "</p>
+                            <h5 class='mb-1 fw-bold '>" . $dadosNot['nomeUsuario'] . "</h5>
+                            <p class='mb-0 text-muted small'>" . $dadosNot['mensagemNotificacao'] . "</p>
                         </div>
                     </div>
                   
                 </div>
             ";
         }
-        
         echo "
                     </div>
                 </div>
@@ -131,7 +138,7 @@ class MostrarNotificacao extends CriaPaginacao
     }
     public function getNot(){
         $nome = $_SESSION["nome"];
-        $sql = "SELECT * FROM tbusuario WHERE nomeUsuario =  '$nome' ";
+        $sql = "SELECT * FROM tbusuario WHERE nomeUsuario =  '$nome' ORDER BY idUsuario DESC";
         $query = self::execSql($sql);
         $dados = self::listarDados($query);
         $id = $dados["idUsuario"];

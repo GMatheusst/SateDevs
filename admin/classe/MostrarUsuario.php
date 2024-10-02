@@ -52,11 +52,6 @@ class MostrarUsuario extends CriaPaginacao{
                                 <td class='align-content-around'>"
                                 ;
                                     include('../tela/formApagarUsuario.php');
-                                echo "  
-                                </td>
-                                <td class='align-content-around'>"
-                                ;
-                                    include('../tela/adicionarAdm.php');
                                     echo"
                             </tr>
                 ";

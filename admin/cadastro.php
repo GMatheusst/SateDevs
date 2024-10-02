@@ -136,9 +136,9 @@
         } else if(isset($_POST["enviar"])) {
             include_once("classe/CadastrarDados.php");
             $cadastro = new InserirDados();
-            $cadastro->CadastroDeUsuario($_POST["usuario"],$_POST["email"],$_POST["senha"]);
+            $cadastro->CadastroDeUsuario($_POST["usuario"],$_POST["email"],$_POST["senha"],2);
             echo "<div class='alert alert-success my-3'>";
-            echo "Cadastro realizado com sucesso!";
+            echo "Sucesso";
             echo "<a href='index.php' class='alert-link'> Voltar ao login</a>";
             echo "</div>";
         }
