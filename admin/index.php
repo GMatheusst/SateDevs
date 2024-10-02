@@ -100,10 +100,20 @@
         font-size: 14px;
       }
     }
+    #aqui {
+  position: absolute;
+  top: 0;
+  left: 1290px;
+  padding: 10px;
+}
+
   </style>
 </head>
 
 <body>
+  <div id="aqui">
+    <a class="btn btn-danger text-dark" href="../index.php">Sair</a>
+  </div>
   <div class="login-card">
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
       <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
