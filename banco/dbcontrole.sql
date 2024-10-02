@@ -132,7 +132,7 @@ CREATE TABLE IF NOT EXISTS `tbnotificacao`(
   `idNotificacao` int NOT NULL AUTO_INCREMENT,
   `idUsuario` int DEFAULT '0',
   `nomeUsuario` char(20) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
-  `mensagemNotificacao` char(200) CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
+  `mensagemNotificacao` text CHARACTER SET latin1 COLLATE latin1_swedish_ci DEFAULT NULL,
 	PRIMARY KEY (`idNotificacao`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
