@@ -3,7 +3,7 @@
 include_once("../classe/ManipularDados.php");
 $insert = new ManipularDados();
 if($_POST["idForm"] == "CRProd"){
-  if(empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["quant"]) || empty($_POST["preço"]) || empty($_POST["Cat"]) || empty($_POST["SubCat"])){
+  if(empty($_POST["nome"]) || empty($_POST["desc"]) || empty($_POST["quant"]) || empty($_POST["preço"]) || empty($_POST["Cat"]) || empty($_POST["SubCat"])  || empty($_POST["destaque"])){
     echo "
     <script>
     alert('Por favor, preencha todos os campos.');
@@ -19,18 +19,19 @@ if($_POST["idForm"] == "CRProd"){
     $preço = @$_POST["preço"];
     $idc = @$_POST["Cat"];
     $idsc = @$_POST["SubCat"];
+    $destaque = @$_POST["destaque"];
     $insert->acessarTabela("tbproduto");
-    $insert->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto,idImagem,idCategoria,idSubCategoria");
-    $insert->acessarDados("'$nome','$desc','$quant','$preço','$img',$idc,$idsc");
+    $insert->acessarCampo("nomeProduto,descProduto,quantProduto,valorProduto,idImagem,idCategoria,idSubCategoria,destaqueProduto");
+    $insert->acessarDados("'$nome','$desc','$quant','$preço','$img','$idc','$idsc','$destaque'");
     $insert->acessarCampoId("nomeProduto");
     $insert->acessarValorId('$nome');
     $insert->inserirDados();
     echo "
-          <script>
-          alert('Cadastro realizado com sucesso.');
-          window.location.href = '../tela/?tela=cadListarProduto';
-          </script>
-          ";
+    <script>
+    alert('Cadastro Realizado');
+    window.location.href = '../tela/?tela=cadListarProduto';
+    </script>
+    ";
   }
 }
 elseif($_POST["idForm"] == "CRImg") {

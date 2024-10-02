@@ -41,6 +41,15 @@
                                         <label for="nome" class="lead fs-6">Valor Unitário</label>
                                         <input type="text" name="preço" id="" class="input border-0 border-bottom">
                                     </div>
+                                    <div class="text-start border px-1 py-1 mb-1">
+                                         <label for="nome" classs="lead fs-6">Destaque</label>
+                                         <select class="form-select" aria-label="Default select example" name="destaque">
+                                                <option>Selecione</option>
+                                                <option value="SIM">Sim</option>
+                                                <option value="NAO">Não</option>
+                                                </select>
+                                    </div>
+
                                 <?php
                                 include_once("../funcao/ListarImagem.php");
                                 $imagem = new ListarImagem();
