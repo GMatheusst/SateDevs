@@ -5,7 +5,7 @@
                 $produtos = new MostrarProdutos();
                 /**Método para gerar a paginação */
                 $produtos->setNumPagina(@$_GET["pg"]); //resgata o número da página atual
-                $produtos->setUrl("?pg"); //indicar o caminho/diretório
+                $produtos->setUrl("?sessao=".$_GET["sessao"]."&idc=".$_GET["idc"]."&idsc=".$_GET["idsc"].""); //indicar o caminho/diretório
                 $produtos->setSessao(""); //deve ficar vazia
                 $idc = (@$_GET["idc"]);
                 $idsc = (@$_GET["idsc"]);

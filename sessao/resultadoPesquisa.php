@@ -9,7 +9,12 @@
                 $pesquisa->setSessao(""); //deve ficar vazia
                 $idc = (@$_GET["idc"]);
                 $idsc = (@$_GET["idsc"]);
-                $pesquisa->mostrarResultPesquisa();
+                if($pesquisa->mostrarResultPesquisa() == null){
+                    echo"<h3 class'fw-bold'>Resultado não encontrado<h2>";
+                }
+                else{
+               $pesquisa->mostrarResultPesquisa();
+                }
                 ?>
            
 </section>

@@ -45,7 +45,7 @@ class MostrarProdutos extends CriaPaginacao
               <div class='col-4 mb-sm-0 mb-md-5 col-md-3 col-xl-3'>
                                             <h5 class='lead text-dark fs-5 fw-bol fw-bold fw-medium'>" . $dados["nomeProduto"] . "</h5>
                                             <div class='text-center'>
-                                                <img src='" . $dados["pastaImagem"] . "' class='img-fluid img-thumbnail' alt=''>
+                                                <img src='" . $dados["pastaImagem"] . "' class='img-fluid img-thumbnail' width='180' alt=''>
                                             </div>
                                             <div class='text-center mt-2'>
                                                 <!-- Button trigger modal -->
