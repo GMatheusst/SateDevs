@@ -1,4 +1,6 @@
 <section class="mt-3">
+    <div class="container">
+        <div class="row">
                 <?php
                 include_once("classe/Mostrar0fertas.php");
                 $produtos = new MostrarOfertas();
@@ -8,5 +10,6 @@
                 $produtos->setSessao(""); //deve ficar vazia
                 $produtos->mostrarOfertas();
                 ?>
-           
+           </div>
+        </div>
 </section>

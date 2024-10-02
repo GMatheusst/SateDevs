@@ -36,7 +36,7 @@ class MostrarOfertas extends CriaPaginacao{
             if ($dados = self::results($query)) {
                 $contador++;
                 echo "
-              <div class='col-4 mb-sm-0 mb-md-5 col-md-3 col-xl-3'>
+              <div class='col-2 mb-sm-0 mb-md-5 col-md-3 col-xl-3'>
                                             <h5 class='lead text-dark fs-5 fw-bol fw-bold fw-medium'>" . $dados["nomeProduto"] . "</h5>
                                             <div class='text-center'>
                                                 <img src='" . $dados["pastaImagem"] . "' width='180' class='img-fluid img-thumbnail' alt=''>
